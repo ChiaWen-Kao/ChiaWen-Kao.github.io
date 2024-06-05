@@ -1,0 +1,60 @@
+/*
+  colour schema
+*/
+:root {
+  --primary-colour: #05403A;            /* use for: background */
+  --content-colour: #EAF0F2;            /* use for: content */
+  --secondary-colour: #055951;
+  --accent-colour: #BF9169;             /* use for: emphasis, cta */
+  --secondary-accent-colour: #A67244;   
+}
+
+/*
+  font size
+*/
+.font-size-14 { font-size: 14px; }
+.font-size-18 { font-size: 14px; }
+.font-size-22 { font-size: 14px; }
+.font-size-18 { font-size: 14px; }
+
+
+/*
+  button style
+*/
+.btn-outline {
+  color: var(--content-colour) !important;
+  border-color: var(--content-colour) !important;
+}
+
+.btn-outline:hover {
+  background-color: var(--secondary-colour) !important;
+}
+
+/*
+  navbar
+*/
+.navbar {
+  background-color: var(--primary-colour) !important;
+}
+
+.container-fluid {
+  margin-left: 60px !important;
+  margin-right: 60px !important;
+}
+
+.navbar-brand {
+  font-family: "Cormorant", serif;
+  font-size: 30px !important;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--content-colour) !important;
+}
+
+.navbar .nav-item {
+  padding: 0px 10px 0px 10px !important;
+}
+
+.navbar .nav-link {
+  font-family: "M PLUS Rounded 1c", sans-serif !important;
+  color: var(--content-colour) !important;
+}
