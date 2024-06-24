@@ -81,3 +81,19 @@ hr.rounded {
 .light-text {
   color: var(--content-colour);
 }
+
+/*
+  loading
+*/
+.loading-screen {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.text-carousel {
+  text-align: center;
+  color: var(--content-colour);
+  font-size: 50px;
+  font-weight: 400;
+}

@@ -18,6 +18,14 @@
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- loading -->
+  <div class="loading-screen align-items-center justify-content-center" id="loadingScreen">
+    <!-- text carousel of loading page -->
+    <div id="content">
+      <div class="text-carousel" id="textCarousel"></div>
+    </div>
+  </div>
+
   <!-- navigator -->
   <header>
     <nav class="navbar navbar-expand-lg">
@@ -56,16 +64,13 @@
     </nav>
   </header>
 
-  <!-- banner -->
-  <div class="container-fluid">
-    <>
-  </div>
+
 
   <!-- contact form -->
-
+    
 
   <!-- footer -->
-  <div class="container-fluid w-auto">
+  <div class="container-fluid w-auto" id="footer">
     <div class="row">
       <div class="col navbar-brand">Wen Kao</div>
       <div class="col-sm-auto col-md-auto col-lg-auto"></div>
@@ -87,7 +92,9 @@
     </div>
   </div>
 
-  <!-- import javascript -->
+  <!-- import bootstrap javascript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- import javascript -->
+  <script src="js/site_interaction.js"></script>
 </body>
 </html>
