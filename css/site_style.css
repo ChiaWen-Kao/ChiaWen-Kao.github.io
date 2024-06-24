@@ -10,6 +10,13 @@
 }
 
 /*
+  background colour
+*/
+body {
+  background: var(--primary-colour) !important;
+}
+
+/*
   font size
 */
 .font-size-14 { font-size: 14px; }
@@ -57,4 +64,20 @@
 .navbar .nav-link {
   font-family: "M PLUS Rounded 1c", sans-serif !important;
   color: var(--content-colour) !important;
+}
+
+/*
+  divider
+*/
+hr.rounded {
+  border-top: 2px solid var(--content-colour);
+  border-radius: 2px;
+  opacity: 1;
+}
+
+/*
+  content text style
+*/
+.light-text {
+  color: var(--content-colour);
 }
