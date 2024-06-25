@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // hide main content
     var header = document.getElementsByTagName('header')[0];
     var footer = document.getElementById('footer');
+    var mainContent = document.getElementById('mainContent');
 
     // check if the element is exist
     if (header) {
@@ -10,9 +11,13 @@ document.addEventListener("DOMContentLoaded", function() {
     if (footer) {
         footer.style.display = 'none';
     }
+    if (mainContent) {
+        mainContent.style.display = 'none';
+    }
 
     header.style.display = 'none';
     footer.style.display = 'none';
+    mainContent.style.display = 'none';
 
     // show the text carousel with greetings
     const greetings = ['Hello!', '你好！'];
@@ -29,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
             loadingScreen.style.display = 'none';
             header.style.display = 'block';
             footer.style.display = 'block';
+            mainContent.style.display = 'block';
         }
     }
 

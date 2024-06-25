@@ -9,12 +9,14 @@
   --secondary-accent-colour: #A67244;   
 }
 
+
 /*
   background colour
 */
 body {
   background: var(--primary-colour) !important;
 }
+
 
 /*
   font size
@@ -23,6 +25,21 @@ body {
 .font-size-18 { font-size: 14px; }
 .font-size-22 { font-size: 14px; }
 .font-size-18 { font-size: 14px; }
+
+/*
+  content text style
+*/
+.light-text {
+  color: var(--content-colour);
+  letter-spacing: 2px;
+}
+
+.title {
+  color: var(--content-colour);
+  font-family: "Cormorant", serif;
+  font-size: 60px;
+  font-weight: 600;
+}
 
 
 /*
@@ -42,6 +59,7 @@ body {
 */
 .navbar {
   background-color: var(--primary-colour) !important;
+  padding: 16px 0px 16px 0px !important;
 }
 
 .container-fluid {
@@ -75,12 +93,6 @@ hr.rounded {
   opacity: 1;
 }
 
-/*
-  content text style
-*/
-.light-text {
-  color: var(--content-colour);
-}
 
 /*
   loading
