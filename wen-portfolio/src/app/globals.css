@@ -8,6 +8,7 @@
   --foreground: #F8F7F3;
   --primary: #254D5C;
   --cta: #EECD55;
+  --transparent:rgba(255, 255, 255, 0);
 }
 
 @theme inline {
@@ -27,6 +28,7 @@
     --foreground: var(--foreground);
     --primary: var(--primary);
     --cta: var(--cta);
+    --transparent: var(--transparent);
   }
 }
 
