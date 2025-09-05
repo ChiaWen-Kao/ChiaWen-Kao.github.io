@@ -4,11 +4,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #12262E;
-  --foreground: #F8F7F3;
+  --background: rgb(18, 38, 46);
+  --foreground: rgb(248, 247, 243);
   --primary: #254D5C;
   --cta: #EECD55;
   --transparent:rgba(255, 255, 255, 0);
+  --caption: #BAB9B6;
 }
 
 @theme inline {
@@ -16,20 +17,11 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-cta: var(--cta);
+  --color-caption: var(--caption);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-telugu: "Telugu MN", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--background);
-    --foreground: var(--foreground);
-    --primary: var(--primary);
-    --cta: var(--cta);
-    --transparent: var(--transparent);
-  }
 }
 
 @font-face {
