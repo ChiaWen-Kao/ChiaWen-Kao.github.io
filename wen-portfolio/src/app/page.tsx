@@ -1,3 +1,8 @@
+"use client";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 // Import components
 import Image from "next/image";
 import Hero from "../components/hero";
@@ -5,7 +10,64 @@ import { Button } from "../components/button";
 import ProjectPreviewCard from "../components/projectPreview";
 import projectData from "../data/projects";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Home() {
+  const projectsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const cards = document.querySelectorAll(".project-card");
+    if (!cards.length) return;
+
+    const timelines = Array.from(cards).map((card, i) => {
+      const image = card.querySelector(".card-image");
+      const content = card.querySelector(".card-content");
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      // animate image and content separately for clearer effect
+      const imageFromX = i % 2 === 0 ? -120 : 120; // alternate direction for variety
+      const contentFromX = i % 2 === 0 ? 120 : -120;
+
+      tl.from(
+        image,
+        {
+          x: imageFromX,
+          opacity: 0,
+          duration: 0.9,
+          ease: "power2.out",
+        },
+        0
+      ) // start at 0
+        .from(
+          content,
+          {
+            x: contentFromX,
+            opacity: 0,
+            duration: 0.9,
+            ease: "power2.out",
+          },
+          0.12
+        ); // slight overlap for polish
+
+      return tl;
+    });
+
+    ScrollTrigger.refresh();
+
+    return () => {
+      // kill timelines & triggers when component unmounts (prevents duplicates on HMR)
+      timelines.forEach((t) => t.kill());
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
