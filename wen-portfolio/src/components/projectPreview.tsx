@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+// Import components
+import { Tag } from "../components/tag";
+
 interface ProjectPreviewProps {
   data: {
     title: string;
@@ -49,6 +52,13 @@ export default function ProjectPreview({ data, index }: ProjectPreviewProps) {
           <p className="text-sm font-montserrat text-foreground leading-[200%] mt-5">
             {data.description}
           </p>
+          <div className="flex flex-wrap gap-3 mt-5">
+            {data.tag.map((item) => (
+              <Tag key={item} variant="bordered" colour="foreground" icon="">
+                {item}
+              </Tag>
+            ))}
+          </div>
         </div>
       </div>
     </div>

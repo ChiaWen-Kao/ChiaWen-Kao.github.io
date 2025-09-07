@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // Import components
 import Image from "next/image";
-import Hero from "../components/hero";
+import Hero from "../components/textHero";
 import { Button } from "../components/button";
 import ProjectPreviewCard from "../components/projectPreview";
 import projectData from "../data/projects";
@@ -26,13 +26,13 @@ export default function Home() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: card,
-          start: "top 85%",
-          toggleActions: "play none none none",
+          start: "start 50%",
+          end: "bottom 90%",
+          toggleActions: "play none play reverse",
         },
       });
 
-      // animate image and content separately for clearer effect
-      const imageFromX = i % 2 === 0 ? -120 : 120; // alternate direction for variety
+      const imageFromX = i % 2 === 0 ? -120 : 120;
       const contentFromX = i % 2 === 0 ? 120 : -120;
 
       tl.from(
@@ -44,7 +44,7 @@ export default function Home() {
           ease: "power2.out",
         },
         0
-      ) // start at 0
+      )
         .from(
           content,
           {
@@ -54,7 +54,7 @@ export default function Home() {
             ease: "power2.out",
           },
           0.12
-        ); // slight overlap for polish
+        );
 
       return tl;
     });
@@ -62,7 +62,6 @@ export default function Home() {
     ScrollTrigger.refresh();
 
     return () => {
-      // kill timelines & triggers when component unmounts (prevents duplicates on HMR)
       timelines.forEach((t) => t.kill());
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
@@ -162,7 +161,7 @@ export default function Home() {
       </section>
 
       {/* Projects Overview Section */}
-      <section id="projects-overview" className="px-8 my-20 lg:px-40 md:my-40">
+      <section id="projects-overview" className="px-8 my-20 lg:px-30 md:my-40">
         <h2 className="font-telugu text-foreground text-2xl font-bold mb-10">
           Showcasing Design & Development in Action
           <br />
