@@ -8,7 +8,7 @@ import Image from "next/image";
 import Hero from "../components/textHero";
 import { Button } from "../components/button";
 import ProjectPreviewCard from "../components/projectPreview";
-import projectData from "../data/projects";
+import projectData from "../data/projectsOverview";
 
 gsap.registerPlugin(ScrollTrigger);
 

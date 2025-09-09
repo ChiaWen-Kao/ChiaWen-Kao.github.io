@@ -131,9 +131,14 @@ export default function About() {
             ))}
           </div>
           <div className="mt-20 flex justify-center">
-            <Button variant="filled" colour="cta">
-              Download CV
-            </Button>
+            <a
+              href="/files/cv.pdf"
+              target="_blank"
+            >
+              <Button variant="filled" colour="cta">
+                Download CV
+              </Button>
+            </a>
           </div>
         </>
       ),

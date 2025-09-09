@@ -1,4 +1,4 @@
-const projects = [
+const projectsOverview = [
   {
     title: "ZenZzz - Sleep Tracker Application",
     duration: "03.2024 - 05.2025",
@@ -25,4 +25,4 @@ const projects = [
   },
 ];
 
-export default projects;
+export default projectsOverview;
