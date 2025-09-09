@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -13,8 +13,6 @@ import projectData from "../data/projects";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const projectsRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const cards = document.querySelectorAll(".project-card");
     if (!cards.length) return;
@@ -26,8 +24,8 @@ export default function Home() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: card,
-          start: "start 50%",
-          end: "bottom 90%",
+          start: "start 80%",
+          end: "bottom 50%",
           toggleActions: "play none play reverse",
         },
       });
@@ -68,7 +66,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div className="px-2 md:px-30">
       {/* Hero Section */}
       <Hero />
 
@@ -76,10 +74,10 @@ export default function Home() {
       <section id="about-me" className="px-8 my-20 md:my-40">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
-            <h2 className="font-telugu text-foreground text-2xl font-bold mb-10">
+            <h2 className="font-telugu text-foreground text-3xl font-bold mb-10">
               Passionate designer with expertise in user-centred design
             </h2>
-            <p className="font-montserrat text-foreground text-sm leading-[200%] mb-10">
+            <p className="font-montserrat text-foreground text-md leading-[200%] mb-10">
               I’m a problem solver who loves addressing users’ pain points and
               turning them into meaningful solutions. During the design process,
               I continuously ask “why” and validate decisions through user
@@ -162,14 +160,14 @@ export default function Home() {
 
       {/* Projects Overview Section */}
       <section id="projects-overview" className="px-8 my-20 lg:px-30 md:my-40">
-        <h2 className="font-telugu text-foreground text-2xl font-bold mb-10">
+        <h2 className="font-telugu text-foreground text-3xl font-bold mb-10">
           Showcasing Design & Development in Action
           <br />
           “Exploring design through real-world applications.”
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:items-end">
           <div className="col-span-2">
-            <p className="font-montserrat text-foreground text-sm leading-[200%]">
+            <p className="font-montserrat text-foreground text-md leading-[200%]">
               In today’s fast-paced digital world, I continuously learn, adapt,
               and apply new skills across a variety of projects. From UI/UX
               design and full-stack web development to WordPress, graphic
@@ -189,6 +187,6 @@ export default function Home() {
           <ProjectPreviewCard key={index} data={item} index={index} />
         ))}
       </section>
-    </>
+    </div>
   );
 }

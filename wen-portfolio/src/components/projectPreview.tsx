@@ -23,7 +23,7 @@ export default function ProjectPreview({ data, index }: ProjectPreviewProps) {
     >
       {/* Image */}
       <div
-        className={`card-image aspect-3/2 relative overflow-hidden md:col-span-2 z-0 ${
+        className={`card-image relative overflow-hidden md:col-span-2 z-0 aspect-[3/2] ${
           index % 2 === 1 ? "md:order-2" : ""
         }`}
       >
@@ -31,7 +31,7 @@ export default function ProjectPreview({ data, index }: ProjectPreviewProps) {
           src={data.image}
           alt={data.title}
           fill
-          className="object-cover"
+          className="object-cover w-full h-full"
         />
       </div>
 
@@ -46,10 +46,10 @@ export default function ProjectPreview({ data, index }: ProjectPreviewProps) {
           <h3 className="text-xl font-telugu text-foreground leading-[200%]">
             {data.title}
           </h3>
-          <p className="text-sm font-montserrat text-caption">
+          <p className="text-md font-montserrat text-caption">
             {data.duration} | {data.projectType}
           </p>
-          <p className="text-sm font-montserrat text-foreground leading-[200%] mt-5">
+          <p className="text-md font-montserrat text-foreground leading-[200%] mt-5">
             {data.description}
           </p>
           <div className="flex flex-wrap gap-3 mt-5">

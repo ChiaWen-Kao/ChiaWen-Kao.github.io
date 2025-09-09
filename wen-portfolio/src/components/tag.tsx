@@ -14,18 +14,33 @@ const icons: Record<tagIcon, ReactNode> = {
   "": null,
   location: (
     <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
+      version="1.0"
+      id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="14"
+      viewBox="0 0 64 64"
+      enableBackground="new 0 0 64 64"
+      fill=""
+      stroke=""
+      transform="matrix(1, 0, 0, 1, 0, 0)"
+      strokeWidth="0.00064"
     >
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M12.2848 18.9935C12.1567 19.0875 12.0373 19.1728 11.9282 19.2493C11.8118 19.1721 11.6827 19.0833 11.5427 18.9832C10.8826 18.5109 10.0265 17.8176 9.18338 16.9529C7.45402 15.1792 6 12.9151 6 10.5C6 7.18629 8.68629 4.5 12 4.5C15.3137 4.5 18 7.18629 18 10.5C18 12.8892 16.4819 15.1468 14.6893 16.9393C13.8196 17.8091 12.9444 18.5099 12.2848 18.9935ZM19.5 10.5C19.5 16.5 12 21 12 21C11.625 21 4.5 16.5 4.5 10.5C4.5 6.35786 7.85786 3 12 3C16.1421 3 19.5 6.35786 19.5 10.5ZM13.5 10.5C13.5 11.3284 12.8284 12 12 12C11.1716 12 10.5 11.3284 10.5 10.5C10.5 9.67157 11.1716 9 12 9C12.8284 9 13.5 9.67157 13.5 10.5ZM15 10.5C15 12.1569 13.6569 13.5 12 13.5C10.3431 13.5 9 12.1569 9 10.5C9 8.84315 10.3431 7.5 12 7.5C13.6569 7.5 15 8.84315 15 10.5Z"
-        fill="currentColor"
+      <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+
+      <g
+        id="SVGRepo_tracerCarrier"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
+
+      <g id="SVGRepo_iconCarrier">
+        {" "}
+        <path
+          fill="#f8f7f3"
+          d="M32,0C18.746,0,8,10.746,8,24c0,5.219,1.711,10.008,4.555,13.93c0.051,0.094,0.059,0.199,0.117,0.289l16,24 C29.414,63.332,30.664,64,32,64s2.586-0.668,3.328-1.781l16-24c0.059-0.09,0.066-0.195,0.117-0.289C54.289,34.008,56,29.219,56,24 C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z"
+        />{" "}
+      </g>
     </svg>
   ),
 };
@@ -42,15 +57,13 @@ export const Tag: React.FC<TagProps> = ({
 
   const variantStyles: Record<tagVariant, string> = {
     filled: `bg-foreground text-background`,
-    bordered: `border border-${colour} text-${colour} hover:bg-${colour}/10`,
+    bordered: `border border-${colour} text-${colour}`,
     icon: `text-${colour} hover:bg-${colour}/10 p-2`,
     borderedIcon: `bg-transparent border-${colour} border-[0.5px] text-cta py-4`,
   };
 
   const renderIcon =
-    typeof icon === "string" && icon in icons
-      ? icons[icon as tagIcon]
-      : icon;
+    typeof icon === "string" && icon in icons ? icons[icon as tagIcon] : icon;
 
   return (
     <span

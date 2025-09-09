@@ -8,10 +8,10 @@ const projectsOverview = [
     image: "/imgs/zenzzz-mockup.jpg",
   },
   {
-    title: "InsightHub - SaaS Data Visualisation Platform",
+    title: "InsightHub - Data Visualisation Tool",
     duration: "02.2025 - 03.2025",
     projectType: "Course Work",
-    description: "A web-based platform that simplifies data analysis by converting CSV files into interactive charts and dashboards, which can be easily shared for collaborative insights.",
+    description: "A web-based SaaS platform that simplifies data analysis by converting CSV files into interactive charts and dashboards, which can be easily shared for collaborative insights.",
     tag: ["Full-Stack Development", "Database Design", "UIUX Design"],
     image: "/imgs/sereno.png",
   },

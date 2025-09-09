@@ -53,7 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
   className,
   ...props
 }) => {
-  const baseStyles = `inline-flex items-center w-auto self-start text-sm font-telugu uppercase cursor-pointer gap-3 px-4 py-3`;
+  const baseStyles = `inline-flex items-center w-auto self-start text-md font-telugu uppercase cursor-pointer gap-3 px-4 py-3`;
 
   const variantStyles: Record<ButtonVariant, string> = {
     filled: `bg-cta text-background`,
