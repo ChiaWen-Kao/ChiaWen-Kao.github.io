@@ -36,7 +36,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full p-14 bg-foreground/20 rounded-lg flex flex-col gap-6 font-montserrat text-foreground "
+      className="w-full p-8 md:p-14 bg-foreground/20 rounded-lg flex flex-col gap-6 font-montserrat text-foreground "
     >
       <h2 className="font-telugu text-3xl font-bold mb-4 capitalize">
         Let&apos;s work together !
