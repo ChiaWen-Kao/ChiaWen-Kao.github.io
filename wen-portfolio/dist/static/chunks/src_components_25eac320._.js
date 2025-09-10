@@ -123,7 +123,7 @@ const navigation = [
     },
     {
         name: "Works",
-        href: "/works",
+        href: "/work",
         current: false
     },
     {
