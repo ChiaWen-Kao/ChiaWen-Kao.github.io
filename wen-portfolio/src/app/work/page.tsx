@@ -142,9 +142,10 @@ export default function Work() {
           {filteredProjects.map((project, index) => (
             <div
               key={index}
-              className={`relative h-115 flex flex-col justify-end items-start p-10 project-card overflow-hidden group ${
+              className={`relative h-115 flex flex-col justify-end items-start p-10 project-card overflow-hidden group cursor-pointer ${
                 index % 2 === 0 ? "md:-mt-[200px]" : ""
               }`}
+              onClick={() => window.location.href = `${project.url}`}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-110"
