@@ -7,6 +7,7 @@ const projects = [
       "This platform streamlines the analysis process by generating charts through a straightforward user interface. Users simply upload a CSV file, select the relevant data columns, and the system automatically creates visualisations. Dashboards can also be easily shared with others, supporting collaborative insights and data-driven decision-making. The platform is being developed as a web-based application using Django, an MVC backend framework that ensures scalability and maintainability. MySQL is implemented as the relational database system to provide efficient and secure data management. The project also incorporates CRUD functionality to manage user and data operations effectively. A key focus of the design is accessibility. The platform features a **responsive interface** that adapts across devices, ensuring a seamless user experience and intuitive navigation for a diverse range of users.",
     tag: ["Full-Stack Development", "Database Design", "UIUX Design"],
     image: "/imgs/insighthub.png",
+    url: "/work/insighthub"
   },
   {
     title: "Cool Hack Game Cybersecurity Website Game",
