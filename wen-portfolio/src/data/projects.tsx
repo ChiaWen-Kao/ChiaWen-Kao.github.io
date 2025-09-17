@@ -45,6 +45,7 @@ const projects = [
       "Designed as an activity booking website, this platform aims to strengthen community bonds among residents.",
     tag: ["UIUX Design", "Desk Research", "User Research"],
     image: "/imgs/sereno.png",
+    url: "/work/sereno"
   },
   {
     title: "TNVR Marketing Material",

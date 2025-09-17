@@ -87,7 +87,7 @@ export default function ZenZzz() {
           others, supporting collaborative insights and data-driven
           decision-making
         </p>
-        <h2 className="font-telugu text-2xl uppercase">Key Features</h2>
+        <h2 className="font-telugu text-2xl uppercase mb-10">Key Features</h2>
         <div>
           <Carousel slides={slides} />
         </div>

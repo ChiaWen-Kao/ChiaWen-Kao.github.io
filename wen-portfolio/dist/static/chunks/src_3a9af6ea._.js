@@ -66,7 +66,8 @@ const projects = [
             "Desk Research",
             "User Research"
         ],
-        image: "/imgs/sereno.png"
+        image: "/imgs/sereno.png",
+        url: "/work/sereno"
     },
     {
         title: "TNVR Marketing Material",
