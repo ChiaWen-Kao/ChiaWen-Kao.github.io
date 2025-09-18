@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
 
 type ButtonVariant = "filled" | "bordered" | "icon" | "borderedIcon";
-type ButtonColour = "cta" | "foreground";
+type ButtonColour = "cta" | "foreground" | "disable";
 type ButtonIcon = "" | "link" | "download";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -45,6 +45,12 @@ const icons: Record<ButtonIcon, ReactNode> = {
   download: null,
 };
 
+const colourStyles: Record<ButtonColour, string> = {
+  cta: "bg-cta text-background",
+  foreground: "bg-foreground text-background",
+  disable: "bg-disable text-foreground",
+};
+
 export const Button: React.FC<ButtonProps> = ({
   variant = "filled",
   colour = "cta",
@@ -56,7 +62,7 @@ export const Button: React.FC<ButtonProps> = ({
   const baseStyles = `inline-flex items-center w-auto self-start text-md font-telugu uppercase cursor-pointer gap-3 px-4 py-3`;
 
   const variantStyles: Record<ButtonVariant, string> = {
-    filled: `bg-cta text-background`,
+    filled: "",
     bordered: `border border-${colour} text-${colour} hover:bg-${colour}/10`,
     icon: `text-${colour} hover:bg-${colour}/10 p-2`,
     borderedIcon: `bg-transparent border-${colour} border-[0.5px] text-cta py-4`,
@@ -66,7 +72,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
-      className={`${baseStyles} ${variantStyles[variant]} ${className || ""}`}
+      className={`${baseStyles} ${variantStyles[variant]} ${colourStyles[colour]} ${className || ""}`}
       {...props}
     >
       {children}

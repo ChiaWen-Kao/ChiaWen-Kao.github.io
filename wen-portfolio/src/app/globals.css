@@ -10,6 +10,8 @@
   --cta: #EECD55;
   --transparent:rgba(255, 255, 255, 0);
   --caption: #BAB9B6;
+  --disable: #858482;
+  --success: #6BAE45;
 }
 
 @theme inline {
@@ -18,6 +20,8 @@
   --color-primary: var(--primary);
   --color-cta: var(--cta);
   --color-caption: var(--caption);
+  --color-disable: var(--disable);
+  --color-success: var(--success);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-telugu: "Telugu MN", sans-serif;
