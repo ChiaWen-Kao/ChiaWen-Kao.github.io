@@ -17,6 +17,7 @@ const projects = [
       "Collaborated on the design and development of Cool Hack Game, an online multiplayer platform that teaches adolescents practical cybersecurity skills through engaging, game-based challenges. The system features interactive encryption puzzles, a firewall simulation game, and AI-driven difficulty adjustment to personalize the learning experience.",
     tag: ["Frontend Development", "UIUX Design", "Deployment"],
     image: "/imgs/cool-hack-game.png",
+    url: "/work/cool-hack-game",
   },
   {
     title: "COPD Management FHIR App for Patient self-monitoring",
