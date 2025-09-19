@@ -25,7 +25,7 @@ export default function WorkHero({ name, subtitle, coverImg }: WorkHeroProps) {
   
     return (
       <>
-        <section className="px-10 md:px-30">
+        <section className="px-10 md:px-15 lg:px-20">
           <div
             style={{ minHeight: minH }}
             className="flex flex-col justify-center"

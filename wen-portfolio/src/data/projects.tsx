@@ -26,6 +26,7 @@ const projects = [
       "Co-developed a patient-facing web application to support self-monitoring for individuals with Chronic Obstructive Pulmonary Disease (COPD). The system enables patients to complete the COPD Assessment Test (CAT), integrate and visualize data from wearable devices (e.g., heart rate, oxygen saturation, daily steps), and share results securely via a FHIR-compliant server.",
     tag: ["Frontend Development", "UIUX Design"],
     image: "/imgs/copd.png",
+    url: "/work/copd",
   },
   {
     title: "ZenZzz Sleep Tracker Application",
