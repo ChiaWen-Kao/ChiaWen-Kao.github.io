@@ -283,7 +283,7 @@ export default function About() {
         ))}
 
         {/* Quotation section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 px-2 md:px-60 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 px-2 md:px-60 relative mb-48">
           <div
             className="relative w-full h-[500px] z-10 order-1 md:order-2"
             ref={quotationImgRef}

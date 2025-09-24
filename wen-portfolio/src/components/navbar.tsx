@@ -7,7 +7,7 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 // Import components
 import { Button } from "../components/button";
@@ -15,7 +15,7 @@ import { Button } from "../components/button";
 const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "About", href: "/about", current: false },
-  { name: "Works", href: "/work", current: false },
+  { name: "Works", href: "/works", current: false },
   { name: "Blog", href: "/blog", current: false },
 ];
 
@@ -25,6 +25,7 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   const router = useRouter();
+  const currentPath = usePathname();
 
   return (
     <Disclosure as="nav" id="navbar" className="relative font-telugu z-10">
@@ -57,26 +58,33 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block ml-auto">
               <div className="flex justify-end space-x-5">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? "page" : undefined}
-                    className={classNames(
-                      item.current
-                        ? "text-foreground"
-                        : "text-gray-400 hover:text-foreground",
-                      "relative text-body font-telugu uppercase px-3 py-2 transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-foreground before:origin-center before:h-[1px] before:w-0 hover:before:w-[40%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-foreground after:origin-center after:h-[1px] after:w-0 hover:after:w-[40%] after:bottom-0 after:right-[50%]"
-                    )}
-                  >
-                    {item.name}
-                  </a>
-                ))}
+                {navigation.map((item) => {
+                  const isActive = currentPath === item.href;
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      aria-current={isActive ? "page" : undefined}
+                      className={classNames(
+                        isActive
+                          ? "text-foreground before:w-[40%] after:w-[40%]"
+                          : "text-gray-400 hover:text-foreground",
+                        "relative text-body font-telugu uppercase px-3 py-2 transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-foreground before:origin-center before:h-[1px] before:w-0 hover:before:w-[40%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-foreground after:origin-center after:h-[1px] after:w-0 hover:after:w-[40%] after:bottom-0 after:right-[50%]"
+                      )}
+                    >
+                      {item.name}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 hidden sm:block">
-            <Button variant="filled" colour="cta" onClick={() => router.push("/contact")}>
+            <Button
+              variant="filled"
+              colour="cta"
+              onClick={() => router.push("/contact")}
+            >
               Contact Me
             </Button>
           </div>
@@ -93,7 +101,7 @@ export default function Navbar() {
               aria-current={item.current ? "page" : undefined}
               className={classNames(
                 item.current
-                  ? "text-foreground"
+                  ? "text-foreground before:w-[40%] after:w-[40%]"
                   : "text-gray-400 hover:text-foreground",
                 "block font-telugu rounded-md px-3 py-2 text-base font-medium"
               )}

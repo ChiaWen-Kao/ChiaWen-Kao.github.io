@@ -13,7 +13,15 @@ const projectsOverview = [
     projectType: "Course Work",
     description: "A web-based SaaS platform that simplifies data analysis by converting CSV files into interactive charts and dashboards, which can be easily shared for collaborative insights.",
     tag: ["Full-Stack Development", "Database Design", "UIUX Design"],
-    image: "/imgs/sereno.png",
+    image: "/imgs/p2/insighthub-mockup.png",
+  },
+  {
+    title: "COPD Self-Monitoring FHIR App",
+    duration: "04.2024 - 10.2024",
+    projectType: "Industry-Sponsored Work",
+    description: "Developed a SMART on FHIR COPD management App to supportpatient self-monitoring. This project allows healthcare providers to track patients’ vital signs alongside a self-administered COPD questionnaire.",
+    tag: ["UIUX Design", "Frontend Developemnt"],
+    image: "/imgs/p4/p4-cover.png",
   },
   {
     title: "TNVR - Marketing Material",

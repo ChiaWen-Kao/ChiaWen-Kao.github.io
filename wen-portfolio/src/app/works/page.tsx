@@ -137,7 +137,7 @@ export default function Work() {
       </section>
 
       {/* Projects */}
-      <section className="mt-10">
+      <section className="mt-10 mb-48">
         <div className="grid grid-colrs-1 md:grid-cols-2 gap-10">
           {filteredProjects.map((project, index) => (
             <div

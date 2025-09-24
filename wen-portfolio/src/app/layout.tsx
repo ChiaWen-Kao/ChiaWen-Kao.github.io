@@ -4,6 +4,7 @@ import "./globals.css";
 
 // Import components
 import Navbar from "@components/navbar";
+import Footer from "@components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
       >
         <Navbar />
         <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );

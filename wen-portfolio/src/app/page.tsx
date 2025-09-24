@@ -42,17 +42,16 @@ export default function Home() {
           ease: "power2.out",
         },
         0
-      )
-        .from(
-          content,
-          {
-            x: contentFromX,
-            opacity: 0,
-            duration: 0.9,
-            ease: "power2.out",
-          },
-          0.12
-        );
+      ).from(
+        content,
+        {
+          x: contentFromX,
+          opacity: 0,
+          duration: 0.9,
+          ease: "power2.out",
+        },
+        0.12
+      );
 
       return tl;
     });
@@ -83,9 +82,11 @@ export default function Home() {
               I continuously ask “why” and validate decisions through user
               testing to ensure the best possible experience.
             </p>
-            <Button variant="borderedIcon" colour="cta" icon="link">
-              read more about me
-            </Button>
+            <a href="/about">
+              <Button variant="borderedIcon" colour="cta" icon="link">
+                read more about me
+              </Button>
+            </a>
           </div>
           <div className="hidden md:columns-3xs md:block">
             <div className="aspect-3/2 relative overflow-hidden mb-4">
@@ -178,9 +179,11 @@ export default function Home() {
             </p>
           </div>
           <div className="flex justify-start smd:justify-end">
-            <Button variant="borderedIcon" colour="cta" icon="link">
-              see more projects
-            </Button>
+            <a href="/works">
+              <Button variant="borderedIcon" colour="cta" icon="link">
+                see more projects
+              </Button>
+            </a>
           </div>
         </div>
         {projectData.map((item, index) => (
