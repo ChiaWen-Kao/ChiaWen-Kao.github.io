@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className="rounded-xl mx-auto max-w-7xl px-2 py-2 sm:px-6 lg:px-8 sm:py-2 lg:py-6">
+    <footer className="rounded-xl mx-auto max-w-7xl px-2 py-2 sm:px-6 lg:px-8 sm:py-2 lg:py-6" id="footer">
       <div>
         <div className="sm:flex sm:items-center sm:justify-between">
           <a
