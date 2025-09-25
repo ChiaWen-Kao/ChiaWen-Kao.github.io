@@ -27,9 +27,9 @@ export default function TextHero() {
     if (prefersReduced) return;
 
     const ctx = gsap.context(() => {
-      gsap.from(".hero-animate", {
-        y: 50, // slide up
-        opacity: 0, // fade in
+      gsap.to(".hero-animate", {
+        y: 0, // slide up
+        opacity: 1, // fade in
         duration: 3, // animation duration
         stagger: 0.5, // delay between each element
         ease: "power3.out",
@@ -43,12 +43,12 @@ export default function TextHero() {
       id="text-hero"
       ref={textHeroRef}
       style={{ minHeight: minH }}
-      className="flex flex-col items-center justify-center text-center px-6"
+      className="flex flex-col items-center justify-center text-center px-6 "
     >
-      <h1 className="hero-animate font-telugu font-bold text-foreground uppercase text-5xl md:text-7xl leading-[140%] mb-4">
+      <h1 className="hero-animate opacity-0 font-telugu font-bold text-foreground uppercase text-5xl md:text-7xl leading-[140%] mb-4">
         Hi, I&apos;m Wen.
       </h1>
-      <h1 className="hero-animate font-telugu font-bold text-cta uppercase text-5xl md:text-7xl leading-[140%]">
+      <h1 className="hero-animate opacity-0 font-telugu font-bold text-cta uppercase text-5xl md:text-7xl leading-[140%]">
         <span className="block">A UI/UX designer</span>
         <span className="block">&amp; Full-stack developer</span>
       </h1>

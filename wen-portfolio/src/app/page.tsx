@@ -24,7 +24,7 @@ export default function Home() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: card,
-          start: "start 80%",
+          start: "start 70%",
           end: "bottom 50%",
           toggleActions: "play none play reverse",
         },
@@ -65,12 +65,12 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="px-2 md:px-30">
+    <div className="sm:px-4 md:px-2 md:px-30">
       {/* Hero Section */}
       <Hero />
 
       {/* About Me Section */}
-      <section id="about-me" className="px-8 my-20 md:my-40">
+      <section id="about-me" className="px-6 my-20 md:my-40">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="font-telugu text-foreground text-3xl font-bold mb-10">
@@ -94,6 +94,7 @@ export default function Home() {
                 src="/imgs/zenzzz.png"
                 alt="ZenZzz UIUX Project"
                 fill
+                loading="eager"
                 className="object-cover"
               />
             </div>
@@ -102,6 +103,7 @@ export default function Home() {
                 src="/imgs/chilling-coffee.jpg"
                 alt="Chilling Coffee Logo Design Project"
                 fill
+                loading="eager"
                 className="object-cover"
               />
             </div>
@@ -110,6 +112,7 @@ export default function Home() {
                 src="/imgs/tnvr.jpg"
                 alt="TNVR Logo Design Project"
                 fill
+                loading="eager"
                 className="object-cover"
               />
             </div>
@@ -118,6 +121,7 @@ export default function Home() {
                 src="/imgs/sereno.png"
                 alt="Sereno Web Design Project"
                 fill
+                loading="eager"
                 className="object-cover"
               />
             </div>
@@ -160,7 +164,7 @@ export default function Home() {
       </section>
 
       {/* Projects Overview Section */}
-      <section id="projects-overview" className="px-8 my-20 lg:px-30 md:my-40">
+      <section id="projects-overview" className="px-6 md:px-8 my-20 lg:px-30 md:my-40">
         <h2 className="font-telugu text-foreground text-3xl font-bold mb-10">
           Showcasing Design & Development in Action
           <br />

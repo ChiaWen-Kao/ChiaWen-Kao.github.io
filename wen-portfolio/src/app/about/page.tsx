@@ -1,7 +1,7 @@
 "use client";
 
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import ImageHero from "../../components/imageHero";
@@ -17,11 +17,32 @@ export default function About() {
   const sectionRefs = useRef<HTMLDivElement[]>([]);
   const titleRefs = useRef<HTMLDivElement[]>([]);
   const quotationImgRef = useRef<HTMLDivElement>(null);
+  const [loaded, setLoaded] = useState(false);
 
   // Heading & paragraph scroll animation
   useEffect(() => {
     if (!headingRef.current || !paragraphRef.current) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    useEffect(() => {
+      if (!loaded || (!headingRef.current && !paragraphRef.current)) return;
+
+      const ctx = gsap.context(() => {
+        gsap.fromTo(
+          headingRef.current,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.5, ease: "power3.out" }
+        );
+        gsap.fromTo(
+          paragraphRef.current,
+          { opacity: 0 },
+          { }
+          }
+        )
+      });
+
+      return () => ctx.revert();
+    }, [loaded]);
 
     const ctx = gsap.context(() => {
       gsap.to(headingRef.current, {
@@ -131,10 +152,7 @@ export default function About() {
             ))}
           </div>
           <div className="mt-20 flex justify-center">
-            <a
-              href="/files/cv.pdf"
-              target="_blank"
-            >
+            <a href="/files/cv.pdf" target="_blank">
               <Button variant="filled" colour="cta">
                 Download CV
               </Button>
@@ -237,7 +255,7 @@ export default function About() {
       <div className="mt-[-30vh] md:mt-[-250px] z-10 relative px-10 md:px-30">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div
-            className="font-telugu font-bold text-5xl md:text-8xl uppercase animate-heading"
+            className="font-telugu font-bold text-5xl md:text-8xl uppercase animate-heading opacity-0"
             ref={headingRef}
           >
             <h2>
@@ -247,7 +265,7 @@ export default function About() {
             </h2>
           </div>
           <div
-            className="leading-[200%] md:text-right flex justify-end items-start"
+            className="leading-[200%] md:text-right flex justify-end items-start opacity-0"
             ref={paragraphRef}
           >
             <h3 className="font-telugu text-foreground font-bold text-xl md:text-3xl capitalize">

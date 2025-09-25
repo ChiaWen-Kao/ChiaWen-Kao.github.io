@@ -2,16 +2,16 @@
 
 export default function Footer() {
   return (
-    <footer className="rounded-xl mx-auto max-w-7xl px-2 py-2 sm:px-6 lg:px-8 sm:py-2 lg:py-6" id="footer">
+    <footer className="rounded-xl mx-auto max-w-7xl px-6 py-8 md:px-8 md:py-6" id="footer">
       <div>
-        <div className="sm:flex sm:items-center sm:justify-between">
+        <div className="flex flex-col md:flex-row items-center justify-between md:items-center md:justify-between">
           <a
             href="https://chiawen-kao.github.io/"
             className="flex items-center mb-4 sm:mb-0 rtl:space-x-reverse"
           >
-            <img src="/logo.svg" className="h-8" alt="Wen's Logo" />
+            <img src="/logo.svg" className="w-30" alt="Wen's Logo" />
           </a>
-          <ul className="flex flex-wrap items-center mb-6 text-body text-caption font-telugu sm:mb-0 gap-8">
+          <ul className="flex flex-col md:flex-row items-center text-body text-caption font-telugu gap-8">
             <li>
               <a
                 href="https://chiawen-kao.github.io/"
@@ -54,13 +54,9 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <hr className="my-6 border-caption border-t-[0.2] sm:mx-auto lg:my-8 " />
-        <span className="block text-sm text-gray-400 sm:text-center font-montserrat">
-          © 2025{" "}
-          <a href="https://chiawen-kao.github.io/" className="hover:underline">
-            Chia-Wen, Kao
-          </a>
-          . All Rights Reserved.
+        <hr className="my-6 border-caption border-t-[0.2] sm:mx-auto lg:my-8" />
+        <span className="flex text-sm text-gray-400 justify-center font-montserrat">
+          © 2025 Chia-Wen, Kao · All Rights Reserved.
         </span>
       </div>
     </footer>

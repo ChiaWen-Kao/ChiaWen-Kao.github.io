@@ -53,7 +53,7 @@ export const Tag: React.FC<TagProps> = ({
   className,
   ...props
 }) => {
-  const baseStyles = `inline-flex items-center w-auto self-start text-sm font-montserrat px-2 py-1 rounded-md`;
+  const baseStyles = `inline-flex items-center w-auto self-start text-xs font-montserrat px-2 py-1 rounded-md`;
 
   const variantStyles: Record<tagVariant, string> = {
     filled: `bg-foreground text-background`,

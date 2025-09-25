@@ -37,7 +37,7 @@ export default function ProjectPreview({ data, index }: ProjectPreviewProps) {
 
       {/* Text */}
       <div
-        className={`card-content bg-[rgba(18, 38, 46, 0.5)] backdrop-blur-3xl rounded-md p-9 relative md:ml-[-100px] z-10 ${
+        className={`card-content bg-[rgba(18, 38, 46, 0.5)] backdrop-blur-3xl rounded-md p-6 md:p-9 relative md:ml-[-100px] z-10 ${
           index % 2 === 1 ? "md:order-1 md:ml-[0px] md:mr-[-100px]" : ""
         }`}
       >
