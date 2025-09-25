@@ -36,8 +36,7 @@ export default function About() {
         gsap.fromTo(
           paragraphRef.current,
           { opacity: 0 },
-          { }
-          }
+          { opacity: 1, duration: 0.5, ease: "power3.out" }
         )
       });
 

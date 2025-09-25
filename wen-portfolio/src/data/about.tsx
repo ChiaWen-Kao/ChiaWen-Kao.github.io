@@ -58,7 +58,7 @@ const about = {
           label: "Frontend",
           items: [
             "HTML",
-            "CSS (Bootstrap, Tailwind Framework)",
+            "CSS (Bootstrap & Tailwind Framework)",
             "React",
             "React Native",
             "JavaScript",
