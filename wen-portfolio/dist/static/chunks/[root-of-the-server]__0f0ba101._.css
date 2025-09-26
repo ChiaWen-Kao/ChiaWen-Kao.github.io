@@ -292,6 +292,8 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --text-7xl: 4.5rem;
@@ -1070,6 +1072,10 @@
     margin-bottom: calc(var(--spacing) * 10);
   }
 
+  .mb-20 {
+    margin-bottom: calc(var(--spacing) * 20);
+  }
+
   .mb-48 {
     margin-bottom: calc(var(--spacing) * 48);
   }
@@ -1484,6 +1490,10 @@
     border-color: var(--foreground);
   }
 
+  .bg-\[\#DDE5DA\] {
+    background-color: #dde5da;
+  }
+
   .bg-cta {
     background-color: var(--cta);
   }
@@ -1673,6 +1683,18 @@
     padding-block: calc(var(--spacing) * 14);
   }
 
+  .py-15 {
+    padding-block: calc(var(--spacing) * 15);
+  }
+
+  .py-20 {
+    padding-block: calc(var(--spacing) * 20);
+  }
+
+  .py-30 {
+    padding-block: calc(var(--spacing) * 30);
+  }
+
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
   }
@@ -1697,6 +1719,10 @@
     font-family: Montserrat, sans-serif;
   }
 
+  .font-rubik {
+    font-family: Rubik, sans-serif;
+  }
+
   .font-telugu {
     font-family: Telugu MN, sans-serif;
   }
@@ -1709,6 +1735,11 @@
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
 
   .text-5xl {
@@ -1773,6 +1804,10 @@
 
   .whitespace-nowrap {
     white-space: nowrap;
+  }
+
+  .text-\[\#517345\] {
+    color: #517345;
   }
 
   .text-background {
@@ -2475,6 +2510,12 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:py-30 {
+      padding-block: calc(var(--spacing) * 30);
+    }
+  }
+
+  @media (min-width: 48rem) {
     .md\:text-right {
       text-align: right;
     }
@@ -2491,6 +2532,13 @@
     .md\:text-3xl {
       font-size: var(--text-3xl);
       line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:text-4xl {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
     }
   }
 
@@ -2593,6 +2641,27 @@
 @font-face {
   font-family: Montserrat;
   src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Telugu MN;
+  src: url("/fonts/TeluguMN-Bold-02.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/fonts/Rubik-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/fonts/Rubik-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }

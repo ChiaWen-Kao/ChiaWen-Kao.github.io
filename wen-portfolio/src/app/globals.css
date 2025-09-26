@@ -26,6 +26,7 @@
   --font-mono: var(--font-geist-mono);
   --font-telugu: "Telugu MN", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
+  --font-rubik: "Rubik", sans-serif;
 }
 
 @font-face {
@@ -59,6 +60,27 @@
 @font-face {
   font-family: "Montserrat";
   src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Telugu MN";;
+  src: url("/fonts/TeluguMN-Bold-02.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }

@@ -65,7 +65,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="sm:px-4 md:px-2 md:px-30">
+    <div className="px-4 md:px-2 md:px-30">
       {/* Hero Section */}
       <Hero />
 
