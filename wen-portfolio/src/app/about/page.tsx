@@ -24,55 +24,63 @@ export default function About() {
     if (!headingRef.current || !paragraphRef.current) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    useEffect(() => {
-      if (!loaded || (!headingRef.current && !paragraphRef.current)) return;
-
-      const ctx = gsap.context(() => {
-        gsap.fromTo(
-          headingRef.current,
-          { opacity: 0 },
-          { opacity: 1, duration: 0.5, ease: "power3.out" }
-        );
-        gsap.fromTo(
-          paragraphRef.current,
-          { opacity: 0 },
-          { opacity: 1, duration: 0.5, ease: "power3.out" }
-        )
-      });
-
-      return () => ctx.revert();
-    }, [loaded]);
-
     const ctx = gsap.context(() => {
-      gsap.to(headingRef.current, {
-        filter: "blur(20px)",
-        x: () => -window.innerWidth * 0.4,
-        opacity: 0.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 50%",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
+      gsap.fromTo(
+        headingRef.current,
+        { opacity: 1 },
+        {
+          filter: "blur(20px)",
+          x: () => -window.innerWidth * 0.4,
+          opacity: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 50%",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
 
-      gsap.to(paragraphRef.current, {
-        filter: "blur(20px)",
-        x: () => window.innerWidth * 0.4,
-        opacity: 0.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: paragraphRef.current,
-          start: "top 50%",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    });
+      gsap.fromTo(
+        paragraphRef.current,
+        { opacity: 1 },
+        {
+          filter: "blur(20px)",
+          x: () => window.innerWidth * 0.4,
+          opacity: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: paragraphRef.current,
+            start: "top 50%",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    }, [loaded]);
 
     return () => ctx.revert();
   }, []);
+
+  useEffect(() => {
+    if (!loaded || !headingRef.current || !paragraphRef.current) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        headingRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.1, ease: "power3.out" }
+      );
+      gsap.fromTo(
+        paragraphRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.1, ease: "power3.out" }
+      );
+    });
+
+    return () => ctx.revert();
+  }, [loaded]);
 
   // Pin section titles
   useEffect(() => {
@@ -248,7 +256,7 @@ export default function About() {
 
   return (
     <div>
-      <ImageHero />
+      <ImageHero onLoaded={() => setLoaded(true)} />
 
       {/* Page heading */}
       <div className="mt-[-30vh] md:mt-[-250px] z-10 relative px-10 md:px-30">

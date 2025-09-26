@@ -1,5 +1,15 @@
 const projects = [
   {
+    title: "ZenZzz Sleep Tracker Application",
+    duration: "04.2024 - 05.2025",
+    projectType: "Course Work",
+    description:
+      "Designed and prototyped a sleep tracker app for university students. Developed a series of features to improve the functionality and address problems in existing sleep tracking applications.",
+    tag: ["UIUX Design", "Desk Research", "User Research"],
+    image: "/imgs/zenzzz-mockup.jpg",
+    url: "/works/zenzzz",
+  },
+  {
     title: "InsightHub SaaS Data Visualisation Platform",
     duration: "02.2025 - 03.2025",
     projectType: "Course Work",
@@ -10,34 +20,24 @@ const projects = [
     url: "/works/insighthub"
   },
   {
-    title: "Cool Hack Game Cybersecurity Website Game",
-    duration: "03.2025 - 05.2025",
-    projectType: "Course Work",
-    description:
-      "Collaborated on the design and development of Cool Hack Game, an online multiplayer platform that teaches adolescents practical cybersecurity skills through engaging, game-based challenges. The system features interactive encryption puzzles, a firewall simulation game, and AI-driven difficulty adjustment to personalize the learning experience.",
-    tag: ["Frontend Development", "UIUX Design", "Deployment"],
-    image: "/imgs/cool-hack-game.png",
-    url: "/works/cool-hack-game",
-  },
-  {
     title: "COPD Management FHIR App for Patient self-monitoring",
     duration: "09.2024 - 10.2024",
     projectType: "Industry-Sponsored Project",
     description:
       "Co-developed a patient-facing web application to support self-monitoring for individuals with Chronic Obstructive Pulmonary Disease (COPD). The system enables patients to complete the COPD Assessment Test (CAT), integrate and visualize data from wearable devices (e.g., heart rate, oxygen saturation, daily steps), and share results securely via a FHIR-compliant server.",
     tag: ["Frontend Development", "UIUX Design"],
-    image: "/imgs/copd.png",
+    image: "/imgs/p4/p4-cover.png",
     url: "/works/copd",
   },
   {
-    title: "ZenZzz Sleep Tracker Application",
-    duration: "04.2024 - 05.2025",
-    projectType: "Course Work",
+    title: "TNVR Marketing Material",
+    duration: "12.2022",
+    projectType: "Client Project",
     description:
-      "Designed and prototyped a sleep tracker app for university students. Developed a series of features to improve the functionality and address problems in existing sleep tracking applications.",
-    tag: ["UIUX Design", "Desk Research", "User Research"],
-    image: "/imgs/zenzzz-mockup.jpg",
-    url: "/works/zenzzz",
+      "Designed a campaign logo and canvas bag marketing material in collaboration with the Animal Protection Office of Taoyuan, Taiwan.",
+    tag: ["User Research", "Graphic Design"],
+    image: "/imgs/tnvr.jpg",
+    url: "/works/tnvr",
   },
   {
     title: "Serene Activity Booking Website",
@@ -50,14 +50,14 @@ const projects = [
     url: "/works/sereno"
   },
   {
-    title: "TNVR Marketing Material",
-    duration: "12.2022",
-    projectType: "Client Project",
+    title: "Cool Hack Game Cybersecurity Website Game",
+    duration: "03.2025 - 05.2025",
+    projectType: "Course Work",
     description:
-      "Designed a campaign logo and canvas bag marketing material in collaboration with the Animal Protection Office of Taoyuan, Taiwan.",
-    tag: ["User Research", "Graphic Design"],
-    image: "/imgs/tnvr.jpg",
-    url: "/works/tnvr",
+      "Collaborated on the design and development of Cool Hack Game, an online multiplayer platform that teaches adolescents practical cybersecurity skills through engaging, game-based challenges. The system features interactive encryption puzzles, a firewall simulation game, and AI-driven difficulty adjustment to personalize the learning experience.",
+    tag: ["Frontend Development", "UIUX Design", "Deployment"],
+    image: "/imgs/cool-hack-game.png",
+    url: "/works/cool-hack-game",
   },
 ];
 
