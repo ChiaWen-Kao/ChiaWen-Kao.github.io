@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Button } from "@components/button";
 
 export default function ZenZzz() {
   const images = [
@@ -17,8 +17,10 @@ export default function ZenZzz() {
           <img alt={`p4-image-${index}`} src={src} />
         </div>
       ))}
-      <div className="md:px-2 md:px-30 py-10 md:py-30 mb-20 bg-[#DDE5DA]">
-        <h2 className="text-md md:text-4xl font-bold mb-8 font-rubik font-bold text-[#517345] text-center">Demo Video</h2>
+      <div className="md:px-2 md:px-30 py-10 md:py-30 my-20 bg-[#DDE5DA]">
+        <h2 className="text-md md:text-4xl font-bold mb-8 font-rubik font-bold text-[#517345] text-center">
+          Demo Video
+        </h2>
         <div className="flex justify-center">
           <iframe
             width="70%"
@@ -30,6 +32,16 @@ export default function ZenZzz() {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
+        </div>
+        <div className="mt-10 flex justify-center">
+          <a
+            href="https://github.com/ChiaWen-Kao/copd-management"
+            target="_blank"
+          >
+            <Button variant="filled" colour="cta">
+              GitHub
+            </Button>
+          </a>
         </div>
       </div>
     </>
