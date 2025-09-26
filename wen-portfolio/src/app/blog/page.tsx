@@ -24,7 +24,7 @@ export default function Blog() {
 
   return (
     <section
-      className="flex flex-col items-center justify-center"
+      className="flex flex-col items-center justify-center px-4 md:px-2 md:px-30"
       style={{ minHeight: minH }}
     >
       <div className="mb-8 md:mb-10">
