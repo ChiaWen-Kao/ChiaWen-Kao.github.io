@@ -2,44 +2,44 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import gsap from "gsap";
 import Carousel from "../../../components/carousel";
+import { Button } from "@components/button";
 
 export default function ZenZzz() {
   const coverImg = "/imgs/p2/insighthub-mockup.png";
   const slides = [
     {
-      image: "/imgs/p2/insighthub-mockup.png",
+      image: "/imgs/p2/onboard.png",
       title: "Onboard",
       description:
         "Users can securely sign up and log in using Django’s built-in authentication and security features, ensuring safe access and data protection.",
     },
     {
-      image: "/imgs/tnvr.jpg",
+      image: "/imgs/p2/data-upload.png",
       title: "Data Upload",
       description:
         "Users can upload CSV files, which are then converted into interactive graphs and visualisations.",
     },
     {
-      image: "/imgs/p2/insighthub-mockup.png",
+      image: "/imgs/p2/data-visualisation-dashboard.png",
       title: "Data Visualisation Dashboard",
       description:
         "Transforms raw data into compelling visual stories, including multiple chart types and customisable X- and Y-axis selections.",
     },
     {
-      image: "/imgs/p2/insighthub-mockup.png",
+      image: "/imgs/p2/qrcode-generation.png",
       title: "QR Code Generation",
       description:
         "Dashboards can be shared as public or private via QR codes.",
     },
     {
-      image: "/imgs/p2/insighthub-mockup.png",
+      image: "/imgs/p2/social-feature.png",
       title: "Social Features",
       description:
         "Public dashboards can be viewed by other users, who can leave likes and comments to enhance interaction.",
     },
     {
-      image: "/imgs/p2/insighthub-mockup.png",
+      image: "/imgs/p2/admin.png",
       title: "Admin Panel",
       description: "Administrators can manage user subscriptions.",
     },
@@ -64,12 +64,12 @@ export default function ZenZzz() {
           style={{ minHeight: minH }}
           className="flex flex-col justify-center"
         >
-          <h1 className="font-telugu text-8xl">InsightHub</h1>
-          <p className="font-montserrat text-xl leading-[200%] mt-[20px]">
+          <h1 className="font-telugu text-6xl md:text-8xl">InsightHub</h1>
+          <p className="font-montserrat text-md md:text-xl leading-[200%] mt-[20px]">
             SaaS Data Visualisation Website • 2025
           </p>
         </div>
-        <div className="relative w-auto h-[500px] mb-[80px]">
+        <div className="relative w-auto h-[500px] mb-[40px] md:mb-[80px]">
           <Image
             src={coverImg}
             alt="InsightHub"
@@ -79,7 +79,7 @@ export default function ZenZzz() {
         </div>
       </section>
       <section className="px-10 md:px-30">
-        <p className="font-montserrat text-md leading-[200%] mb-[160px]">
+        <p className="font-montserrat text-md leading-[200%] mb-[80px] md:mb-[160px]">
           This platform streamlines the analysis process by generating charts
           through a straightforward user interface. Users simply upload a CSV
           file, select the relevant data columns, and the system automatically
@@ -88,10 +88,10 @@ export default function ZenZzz() {
           decision-making
         </p>
         <h2 className="font-telugu text-2xl uppercase mb-10">Key Features</h2>
-        <div>
+        <div className="mb-[80px]">
           <Carousel slides={slides} />
         </div>
-        <div className="mt-20">
+        <div className="mb-[80px]">
           <p className="font-montserrat leading-[200%]">
             The platform is being developed as a web-based application using
             Django, an MVC backend framework that ensures scalability and
@@ -103,7 +103,9 @@ export default function ZenZzz() {
             devices, ensuring a seamless user experience and intuitive
             navigation for a diverse range of users.
           </p>
-          <h2 className="text-2xl font-bold mb-8 font-telugu mt-50">
+        </div>
+        <div className="mb-[80px]">
+          <h2 className="text-2xl font-bold mb-8 font-telugu">
             Design & Development Flow
           </h2>
           <ol className="font-montserrat leading-[200%] list-decimal list-outside ml-6">
@@ -134,11 +136,9 @@ export default function ZenZzz() {
             </li>
           </ol>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-40 mt-50 mb-50">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[80px] md:gap-40 mb-[80px]">
           <div>
-            <h2 className="text-2xl font-bold mb-8 font-telugu">
-              My Role
-            </h2>
+            <h2 className="text-2xl font-bold mb-8 font-telugu">My Role</h2>
             <p className="font-montserrat leading-[200%]">
               This was an individual project where I acted as a full-stack
               developer. My responsibilities includes database design with
@@ -156,6 +156,16 @@ export default function ZenZzz() {
               <li>Database: PostgreSQL</li>
             </ul>
           </div>
+        </div>
+        <div className="mt-10 flex justify-center mb-20">
+          <a
+            href="https://github.com/ChiaWen-Kao/insighthub"
+            target="_blank"
+          >
+            <Button variant="filled" colour="cta">
+              GitHub
+            </Button>
+          </a>
         </div>
       </section>
     </>

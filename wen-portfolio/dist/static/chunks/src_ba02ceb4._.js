@@ -41,7 +41,7 @@ function Carousel(param) {
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                     src: slide.image,
                                     alt: "slide-".concat(i),
-                                    className: "w-full h-[500px] object-cover"
+                                    className: "w-full h-[350px] md:h-[500px] object-contain"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/carousel.tsx",
                                     lineNumber: 37,
@@ -63,7 +63,7 @@ function Carousel(param) {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex flex-col justify-center items-start px-6 ",
+                    className: "flex flex-col justify-center items-start py-4 md:px-6",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "overflow-hidden w-full",
@@ -225,9 +225,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$carousel$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/carousel.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/button.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -236,32 +238,32 @@ function ZenZzz() {
     const coverImg = "/imgs/p2/insighthub-mockup.png";
     const slides = [
         {
-            image: "/imgs/p2/insighthub-mockup.png",
+            image: "/imgs/p2/onboard.png",
             title: "Onboard",
             description: "Users can securely sign up and log in using Django’s built-in authentication and security features, ensuring safe access and data protection."
         },
         {
-            image: "/imgs/tnvr.jpg",
+            image: "/imgs/p2/data-upload.png",
             title: "Data Upload",
             description: "Users can upload CSV files, which are then converted into interactive graphs and visualisations."
         },
         {
-            image: "/imgs/p2/insighthub-mockup.png",
+            image: "/imgs/p2/data-visualisation-dashboard.png",
             title: "Data Visualisation Dashboard",
             description: "Transforms raw data into compelling visual stories, including multiple chart types and customisable X- and Y-axis selections."
         },
         {
-            image: "/imgs/p2/insighthub-mockup.png",
+            image: "/imgs/p2/qrcode-generation.png",
             title: "QR Code Generation",
             description: "Dashboards can be shared as public or private via QR codes."
         },
         {
-            image: "/imgs/p2/insighthub-mockup.png",
+            image: "/imgs/p2/social-feature.png",
             title: "Social Features",
             description: "Public dashboards can be viewed by other users, who can leave likes and comments to enhance interaction."
         },
         {
-            image: "/imgs/p2/insighthub-mockup.png",
+            image: "/imgs/p2/admin.png",
             title: "Admin Panel",
             description: "Administrators can manage user subscriptions."
         }
@@ -294,7 +296,7 @@ function ZenZzz() {
                         className: "flex flex-col justify-center",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                className: "font-telugu text-8xl",
+                                className: "font-telugu text-6xl md:text-8xl",
                                 children: "InsightHub"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/works/insighthub/page.tsx",
@@ -302,7 +304,7 @@ function ZenZzz() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "font-montserrat text-xl leading-[200%] mt-[20px]",
+                                className: "font-montserrat text-md md:text-xl leading-[200%] mt-[20px]",
                                 children: "SaaS Data Visualisation Website • 2025"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/works/insighthub/page.tsx",
@@ -316,7 +318,7 @@ function ZenZzz() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "relative w-auto h-[500px] mb-[80px]",
+                        className: "relative w-auto h-[500px] mb-[40px] md:mb-[80px]",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             src: coverImg,
                             alt: "InsightHub",
@@ -342,7 +344,7 @@ function ZenZzz() {
                 className: "px-10 md:px-30",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "font-montserrat text-md leading-[200%] mb-[160px]",
+                        className: "font-montserrat text-md leading-[200%] mb-[80px] md:mb-[160px]",
                         children: "This platform streamlines the analysis process by generating charts through a straightforward user interface. Users simply upload a CSV file, select the relevant data columns, and the system automatically creates visualisations. Dashboards can also be easily shared with others, supporting collaborative insights and data-driven decision-making"
                     }, void 0, false, {
                         fileName: "[project]/src/app/works/insighthub/page.tsx",
@@ -358,6 +360,7 @@ function ZenZzz() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-[80px]",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$carousel$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             slides: slides
                         }, void 0, false, {
@@ -371,22 +374,29 @@ function ZenZzz() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-20",
+                        className: "mb-[80px]",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "font-montserrat leading-[200%]",
+                            children: "The platform is being developed as a web-based application using Django, an MVC backend framework that ensures scalability and maintainability. MySQL is implemented as the relational database system to provide efficient and secure data management. The project also incorporates CRUD functionality to manage user and data operations effectively. A key focus of the design is accessibility. The platform features a responsive interface that adapts across devices, ensuring a seamless user experience and intuitive navigation for a diverse range of users."
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/works/insighthub/page.tsx",
+                            lineNumber: 95,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/works/insighthub/page.tsx",
+                        lineNumber: 94,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-[80px]",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "font-montserrat leading-[200%]",
-                                children: "The platform is being developed as a web-based application using Django, an MVC backend framework that ensures scalability and maintainability. MySQL is implemented as the relational database system to provide efficient and secure data management. The project also incorporates CRUD functionality to manage user and data operations effectively. A key focus of the design is accessibility. The platform features a responsive interface that adapts across devices, ensuring a seamless user experience and intuitive navigation for a diverse range of users."
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                lineNumber: 95,
-                                columnNumber: 11
-                            }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-2xl font-bold mb-8 font-telugu mt-50",
+                                className: "text-2xl font-bold mb-8 font-telugu",
                                 children: "Design & Development Flow"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                lineNumber: 106,
+                                lineNumber: 108,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -397,12 +407,12 @@ function ZenZzz() {
                                             children: "Defined project scope and key features."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                            lineNumber: 111,
+                                            lineNumber: 113,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 112,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -411,7 +421,7 @@ function ZenZzz() {
                                                 children: "Conducted technology research and framework evaluation:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                                lineNumber: 114,
+                                                lineNumber: 116,
                                                 columnNumber: 15
                                             }, this),
                                             " ",
@@ -419,7 +429,7 @@ function ZenZzz() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 115,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -428,14 +438,14 @@ function ZenZzz() {
                                                 children: "Designed wireframes and interactive flows:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                                lineNumber: 120,
+                                                lineNumber: 122,
                                                 columnNumber: 15
                                             }, this),
                                             " This website is built with Built frontend UI with HTML, CSS (Bootstrap), and JavaScript"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 121,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -444,14 +454,14 @@ function ZenZzz() {
                                                 children: "Designed wireframes and interactive flows:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 127,
                                                 columnNumber: 15
                                             }, this),
                                             " This website is built with Built frontend UI with HTML, CSS (Bootstrap), and JavaScript"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 126,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -459,28 +469,28 @@ function ZenZzz() {
                                             children: "Established PostgreSQL database Developed backend functionalities using Django"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                            lineNumber: 130,
+                                            lineNumber: 132,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                        lineNumber: 129,
+                                        lineNumber: 131,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                lineNumber: 109,
+                                lineNumber: 111,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/works/insighthub/page.tsx",
-                        lineNumber: 94,
+                        lineNumber: 107,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "grid grid-cols-1 md:grid-cols-2 gap-40 mt-50 mb-50",
+                        className: "grid grid-cols-1 md:grid-cols-2 gap-[80px] md:gap-40 mb-[80px]",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
@@ -489,7 +499,7 @@ function ZenZzz() {
                                         children: "My Role"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                        lineNumber: 139,
+                                        lineNumber: 141,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -503,7 +513,7 @@ function ZenZzz() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/works/insighthub/page.tsx",
-                                lineNumber: 138,
+                                lineNumber: 140,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -556,7 +566,31 @@ function ZenZzz() {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/works/insighthub/page.tsx",
-                        lineNumber: 137,
+                        lineNumber: 139,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-10 flex justify-center mb-20",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: "https://github.com/ChiaWen-Kao/insighthub",
+                            target: "_blank",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                variant: "filled",
+                                colour: "cta",
+                                children: "GitHub"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/works/insighthub/page.tsx",
+                                lineNumber: 165,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/works/insighthub/page.tsx",
+                            lineNumber: 161,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/works/insighthub/page.tsx",
+                        lineNumber: 160,
                         columnNumber: 9
                     }, this)
                 ]

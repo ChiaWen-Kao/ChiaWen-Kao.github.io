@@ -37,13 +37,13 @@ export default function Carousel({ slides }: CarouselProps) {
                 <img
                   src={slide.image}
                   alt={`slide-${i}`}
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[350px] md:h-[500px] object-contain"
                 />
               </div>
             ))}
           </div>
         </div>
-        <div className="flex flex-col justify-center items-start px-6 ">
+        <div className="flex flex-col justify-center items-start py-4 md:px-6">
           <div className="overflow-hidden w-full">
             <div
               className="flex transition-transform duration-500 ease-in-out"
