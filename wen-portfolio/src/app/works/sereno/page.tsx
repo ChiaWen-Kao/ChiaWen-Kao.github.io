@@ -61,24 +61,15 @@ export default function Sereno() {
             Design & Development Flow
           </h2>
           <ol className="font-montserrat leading-[200%] list-decimal list-outside ml-6">
+            <li>Analysed users’ pain points and needs using AI tools.</li>
+            <li>Identified WCAG guidelines to align with user requirements.</li>
             <li>
-              Analysed users’ pain points and needs using AI tools.
+              Designed low-fidelity and high-fidelity prototypes with a
+              responsive layout.
             </li>
-            <li>
-              Identified WCAG guidelines to align with user requirements.
-            </li>
-            <li>
-              Designed low-fidelity and high-fidelity prototypes with a responsive layout.
-            </li>
-            <li>
-              Implemented the frontend.
-            </li>
-            <li>
-              Integrated APIs to ensure up-to-date data.
-            </li>
-            <li>
-              Conducted user testing.
-            </li>
+            <li>Implemented the frontend.</li>
+            <li>Integrated APIs to ensure up-to-date data.</li>
+            <li>Conducted user testing.</li>
           </ol>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-40 mt-50 mb-50">
@@ -100,21 +91,23 @@ export default function Sereno() {
             </ul>
           </div>
         </div>
-        <div className="relative grid grid-cols-2 w-full h-100 gap-10">
-          <Image
-            src="/imgs/p3/p3-lowfi-home.png"
-            alt="Sereno low fidelity prototype"
-            width={100}
-            height={100}
-            className="object-cover w-full h-auto"
-          />
-          <Image
-            src="/imgs/p3/p3-lowfi-blog.png"
-            alt="Sereno low fidelity prototype"
-            width={100}
-            height={100}
-            className="object-cover w-full h-auto"
-          />
+        <div className="relative grid grid-cols-2 h-auto mb-20">
+          <div className="relative w-full h-[500px]">
+            <Image
+              src="/imgs/p3/p3-lowfi-home.png"
+              alt="Sereno low fidelity prototype"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="relative h-auto">
+            <Image
+              src="/imgs/p3/p3-lowfi-blog.png"
+              alt="Sereno low fidelity prototype"
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
       </section>
     </>

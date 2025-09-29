@@ -5,19 +5,19 @@ import Carousel from "../../../components/carousel";
 export default function CoolHackGame() {
   const slides = [
     {
-      image: "/imgs/p3/p3-home.jpg",
+      image: "/imgs/p6/p6-multiplayer.png",
       title: "Decryption Mode",
       description:
         "We implemented a real-time multiplayer game mode where players compete to solve AI-generated decryption puzzles as quickly as possible. WebSocket technology was used to enable real-time interaction and ensure smooth, synchronised gameplay between participants. These puzzles aimed to help users understand various decryption methods.",
     },
     {
-      image: "/imgs/p3/p3-product-detail.jpg",
+      image: "/imgs/p6/p6-firewall-mode.png",
       title: "Firewall Mode",
       description:
         "In this game mode, players learn cybersecurity concepts through an interactive, multi-stage experience: Recon, Exploit, and Retrieve. Players use in-game tools to identify vulnerabilities and breach firewalls, then navigate a simulated terminal to complete tasks.",
     },
     {
-      image: "/imgs/p3/p3-blog.jpg",
+      image: "/imgs/p6/p6-leaderboard.png",
       title: "Leaderboard",
       description:
         "To foster healthy competition and encourage user engagement, we designed a leaderboard that ranks players based on their performance. This feature motivates users to improve their skills while increasing overall platform stickiness.",
@@ -28,7 +28,7 @@ export default function CoolHackGame() {
       <WorkHero
         name="Cool Hack Game"
         subtitle="Cybersecurity Game   •   2024"
-        coverImg="/imgs/p4/p4-cover.png"
+        coverImg="/imgs/cool-hack-game.png"
       />
       <section className="px-20 md:px-15 lg:px-20 mb-50">
         <p className="font-montserrat text-md leading-[200%] mb-[160px]">
@@ -64,7 +64,16 @@ export default function CoolHackGame() {
             what elements attract and engage young players. These insights
             helped shape an appealing and engaging game atmosphere.
           </p>
-          <br />
+          <div className="flex justify-center">
+          <iframe
+            style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
+            width={800}
+            height={450}
+            src="https://embed.figma.com/design/wUBnm2P1pFl9ZqAbf5FyGZ/DECO7381-Prototype?node-id=0-1&embed-host=share"
+            allowFullScreen
+            className="my-10"
+          ></iframe>
+          </div>
           <p className="font-montserrat leading-[200%]">
             As a game developer, we aimed to maximize player engagement, but our
             tutors highlighted the potential risk of game addiction among
