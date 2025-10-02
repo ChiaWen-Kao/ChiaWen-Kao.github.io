@@ -1,8 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wen's Project
+> 👋 **A Warm Welcome to Other Developers**
+> 
+> Thank you for taking the time to view this project!
+>
+> This is a personal portfolio website designed to showcase my past works and provide an overview of me, **Chia-Wen Kao**.  This site is continuously updated with my latest work and blog posts, where I share insights from my design journey.
+>
+> If you’re interested or having suggestions, feel free to reach out — I’d love to connect.
+>
+> 🔗 [MyPorfolio Website](https://chiawen-kao.github.io/)
 
-## Getting Started
+## 💻 Project Overview
+The project is built with [Next.js](https://nextjs.org), bootstrapped using [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), and styled with [Tailwind CSS](https://tailwindcss.com/).
 
-First, run the development server:
+### Getting Started
+To explore this website, you can either clone the repository and follow the steps below, or view the live version using the URL provided above.
+
+First, run the development server via terminal:
 
 ```bash
 npm run dev
@@ -14,23 +27,17 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser, or use the network links displayed in the terminal, to view the running website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Features
+- Introduces myself, highlighting my work and project experience.
+- Provides an overview of my projects with filters based on project tags.
+- Allows users to contact me through a form that sends notification emails directly to me.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
+- Frontend: React / Next.js / Tailwind CSS / GSAP
+- Email Sending: EmailJS
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Ongoing Improvement
+- [ ] Language Switcher: Add mandarin option
+- [ ] Refactor code: Replace repetitive code with reusable components and utilities.
