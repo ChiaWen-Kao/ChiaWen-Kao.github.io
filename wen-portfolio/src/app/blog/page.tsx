@@ -1,31 +1,28 @@
+/**
+ * Page: Blog
+ *
+ * This page serves as a blog list page and the entry point for individual blog posts.
+ *
+ * Features:
+ * - Displays a placeholder image and text for blog pages.
+ * - Shows a "still constructing" illustration and text when no blog content is available.
+ *
+ * @returns {JSX.Element} The Blog page section.
+ */
+
 "use client";
 
-import { useEffect, useState } from "react";
+import useViewpointMinHeight from "utils/useViewpointMinHeight";
+import useHideFooter from "utils/hideFooter";
 
 export default function Blog() {
-  const [minH, setMinH] = useState("100vh");
-
-  // Get navbar height
-  useEffect(() => {
-    const updateMinHeight = () => {
-      const nav = document.getElementById("navbar");
-      const navH = nav?.offsetHeight ?? 0;
-      setMinH(`calc(100vh - ${navH}px)`);
-    };
-    updateMinHeight();
-    window.addEventListener("resize", updateMinHeight);
-  }, []);
-
-  // Hidden footer
-  useEffect(() => {
-    const footer = document.getElementById("footer");
-    footer?.style.setProperty("display", "none");
-  }, []);
+  const minHeight = useViewpointMinHeight();
+  useHideFooter();
 
   return (
     <section
       className="flex flex-col items-center justify-center px-4 md:px-2 md:px-30"
-      style={{ minHeight: minH }}
+      style={{ minHeight: minHeight }}
     >
       <div className="mb-8 md:mb-10">
         <img src="/imgs/constructing.svg" className="w-70 md:w-130 h-auto" />
