@@ -12,6 +12,7 @@
   --caption: #BAB9B6;
   --disable: #858482;
   --success: #6BAE45;
+  --fail: #bc3939;
 }
 
 @theme inline {
@@ -22,6 +23,7 @@
   --color-caption: var(--caption);
   --color-disable: var(--disable);
   --color-success: var(--success);
+  --color-fail: var(--fail);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-telugu: "Telugu MN", sans-serif;
@@ -83,6 +85,15 @@
   src: url("/fonts/Rubik-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+}
+
+@layer components {
+  .font-title {
+    @apply text-5xl md:text-8xl font-telugu uppercase;
+  }
+  .font-body {
+    @apply font-montserrat leading-[200%];
+  }
 }
 
 body {

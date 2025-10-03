@@ -10,6 +10,7 @@ import { Button } from "../components/button";
 import ProjectPreviewCard from "../components/projectPreview";
 import projectData from "../data/projectsOverview";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {

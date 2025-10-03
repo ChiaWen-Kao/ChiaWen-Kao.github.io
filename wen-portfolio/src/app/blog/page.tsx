@@ -25,7 +25,7 @@ export default function Blog() {
   const contentSectionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     // fadeInUp(contentSectionRef);
-    return fadeInUp(contentSectionRef)
+    return fadeInUp(contentSectionRef);
   }, []); // Runs once only, after the compoenent mounts
 
   return (

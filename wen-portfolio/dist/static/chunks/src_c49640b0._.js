@@ -88,20 +88,37 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 "use strict";
 
 __turbopack_context__.s([
+    "fadeInDown",
+    ()=>fadeInDown,
     "fadeInUp",
-    ()=>fadeInUp
+    ()=>fadeInUp,
+    "fadeOutUp",
+    ()=>fadeOutUp
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/gsap/index.js [app-client] (ecmascript) <locals>");
 "use client";
 ;
+/**
+ * Utility: resolveElement
+ *
+ * Safely resolve a target from either HTMLElement or React.RefObject.
+ * Returns `null` if not available.
+ */ function resolveElement(targetRef) {
+    // Check the type of the element
+    // If targetRef is a DOM element, use it directly
+    // If it's a ref, use .current
+    return targetRef instanceof HTMLElement ? targetRef : targetRef.current;
+}
+/**
+ * Utility: shouldReduceMotion
+ *
+ * Check for accessibility setting for reduced motion
+ */ function checkReduceMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
 const fadeInUp = (targetRef)=>{
-    const element = targetRef instanceof HTMLElement // Check the type of the element
-     ? targetRef // If targetRef is a DOM element, use it directly
-     : targetRef.current; // If it's a ref, use .current
-    if (!element) return;
-    // Check for accessibility setting for reduced motion
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
+    const element = resolveElement(targetRef);
+    if (!element || checkReduceMotion()) return;
     // Animtaion settings
     // Group animations together and attach them to a specific element
     const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].context(()=>{
@@ -117,6 +134,36 @@ const fadeInUp = (targetRef)=>{
         });
     }, element);
     return ()=>ctx.revert(); // Cleanup animation if component unmounts
+};
+const fadeInDown = (targetRef)=>{
+    const element = resolveElement(targetRef);
+    if (!element || checkReduceMotion()) return;
+    const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].context(()=>{
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].fromTo(element, {
+            y: -30,
+            opacity: 0
+        }, {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out"
+        });
+    }, element);
+    return ()=>ctx.revert();
+};
+const fadeOutUp = (targetRef, onComplete)=>{
+    const element = resolveElement(targetRef);
+    if (!element || checkReduceMotion()) return;
+    const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].context(()=>{
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].to(element, {
+            y: -30,
+            opacity: 0,
+            duration: 0.6,
+            ease: "power2.in",
+            onComplete
+        });
+    }, element);
+    return ()=>ctx.revert();
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
