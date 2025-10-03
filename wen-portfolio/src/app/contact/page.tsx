@@ -1,26 +1,30 @@
+/**
+ * Page: Contact
+ *
+ * This page provides users with contact information and a form to send enquiry emails.
+ * It also includes animations (via GSAP) for the heading and success alert.
+ *
+ * Features:
+ * - Contact form powered by EmailJS for sending enquiries.
+ * - Display of contact details (email, Linkedin, GitHub).
+ * - Success/Error alert confirmning the result of email sending.
+ *
+ * @returns {JSX.Element}: The Contact page layout.
+ */
+
 "use client";
 
-import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
-// Import components
-import Form from "../../components/form";
+import useViewpointMinHeight from "utils/useViewpointMinHeight";
+import { useEffect, useState, useRef } from "react";
+import Form from "../../components/contactForm";
 
 export default function ContactPage() {
+  const minHeight = useViewpointMinHeight();
+
   const headingRef = useRef<HTMLDivElement>(null);
-  const [minH, setMinH] = useState("100vh");
   const [alertVisible, setAlertVisible] = useState(false);
   const alertRef = useRef<HTMLDivElement>(null);
-
-  // Get navbar height
-  useEffect(() => {
-    const updateMinHeight = () => {
-      const nav = document.getElementById("navbar");
-      const h = nav?.offsetHeight ?? 0;
-      setMinH(`calc(100vh - ${h}px)`);
-    };
-    updateMinHeight();
-    window.addEventListener("resize", updateMinHeight);
-  }, []);
 
   // GSAP animation
   useEffect(() => {
@@ -72,7 +76,7 @@ export default function ContactPage() {
 
   return (
     <div
-      style={{ minHeight: minH }}
+      style={{ minHeight: minHeight }}
       className="flex flex-col w-screen justify-center py-10 px-10 md:px-30"
     >
       {alertVisible && (
