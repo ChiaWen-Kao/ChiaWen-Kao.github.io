@@ -70,7 +70,7 @@ export default function Alert({
         <span
           className="ml-10 cursor-pointer"
           onClick={() => {
-            fadeOutUp(alertRef, onClose);
+            fadeOutUp(alertRef);
           }}
         >
           <svg

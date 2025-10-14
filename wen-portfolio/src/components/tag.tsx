@@ -1,9 +1,34 @@
+/**
+ * Component: Tag
+ *
+ * Renders a tag element with optional icons, color variants, and border styles.
+ *
+ * Features:
+ * - Supports multiple visual variants (`filled`, `bordered`, `icon`, `borderedIcon`).
+ * - Accepts two color themes (`cta`, `foreground`).
+ * - Optional built-in icon support (e.g., `"location"`) or custom React nodes.
+ *
+ * @param {Object} TagProps - The props for the Tag component.
+ * @param {"filled" | "bordered" | "icon" | "borderedIcon"} [TagProps.variant="filled"]: Defines the visual style of the tag.
+ * @param {"cta" | "foreground"} [TagProps.colour="cta"]: Sets the tag’s color theme.
+ * @param {"" | "location" | ReactNode} [TagProps.icon=""]: Specifies an icon to display before the text.
+ * @param {ReactNode} TagProps.children: The content displayed inside the tag.
+ * @param {string} [TagProps.className]: Additional Tailwind or custom classes for further styling.
+ * @param {React.HTMLAttributes<HTMLSpanElement>} [props]: Any additional standard `<span>` attributes.
+ *
+ * @returns {JSX.Element} A styled tag element with optional icon and variant-based styling.
+ *
+ * @example
+ * <Tag vaiant="icon" colour="cta" icon="location">Next.js</Tag>
+ */
 import React, { ReactNode } from "react";
 
+// Limit the pass in value
 type tagVariant = "filled" | "bordered" | "icon" | "borderedIcon";
 type tagColour = "cta" | "foreground";
 type tagIcon = "" | "location";
 
+// TagProps extends <span>'s attribute so the component accepts usual span attributes like className, onClick
 interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
   variant?: tagVariant;
   colour?: tagColour;
@@ -11,6 +36,7 @@ interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 const icons: Record<tagIcon, ReactNode> = {
+  // Mapping from the tagIcon keys to a ReactNode
   "": null,
   location: (
     <svg
@@ -46,6 +72,7 @@ const icons: Record<tagIcon, ReactNode> = {
 };
 
 export const Tag: React.FC<TagProps> = ({
+  // React Function Component
   variant = "filled",
   colour = "cta",
   icon = "",
@@ -53,8 +80,7 @@ export const Tag: React.FC<TagProps> = ({
   className,
   ...props
 }) => {
-  const baseStyles = `inline-flex items-center w-auto self-start text-xs font-montserrat px-2 py-1 rounded-md`;
-
+  const baseStyles = `inline-flex items-center self-start w-auto rounded-md text-xs font-montserrat px-2 py-1`;
   const variantStyles: Record<tagVariant, string> = {
     filled: `bg-foreground text-background`,
     bordered: `border border-${colour} text-${colour}`,
@@ -70,6 +96,7 @@ export const Tag: React.FC<TagProps> = ({
       className={`${baseStyles} ${variantStyles[variant]} ${className || ""}`}
       {...props}
     >
+      {/* If renderIcon exists (is truthy), then render a <span> element containing the icon */}
       {renderIcon && <span className="mr-1">{renderIcon}</span>}
       {children}
     </span>

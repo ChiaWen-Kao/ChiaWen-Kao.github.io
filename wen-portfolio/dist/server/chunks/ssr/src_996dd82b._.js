@@ -72,13 +72,20 @@ __turbopack_context__.s([
     "fadeInUp",
     ()=>fadeInUp,
     "fadeOutUp",
-    ()=>fadeOutUp
+    ()=>fadeOutUp,
+    "slideInAlternative",
+    ()=>slideInAlternative,
+    "snapScroll",
+    ()=>snapScroll
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/gsap/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$dist$2f$ScrollTrigger$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/gsap/dist/ScrollTrigger.js [app-ssr] (ecmascript)");
 "use client";
 ;
+;
+__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].registerPlugin(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$dist$2f$ScrollTrigger$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ScrollTrigger"]);
 /**
- * Utility: resolveElement
+ * Utility: Resolve Element
  *
  * Safely resolve a target from either HTMLElement or React.RefObject.
  * Returns `null` if not available.
@@ -89,7 +96,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$inde
     return targetRef instanceof HTMLElement ? targetRef : targetRef.current;
 }
 /**
- * Utility: shouldReduceMotion
+ * Utility: Check Reduce Motion (Accessibility Setting)
  *
  * Check for accessibility setting for reduced motion
  */ function checkReduceMotion() {
@@ -101,14 +108,19 @@ const fadeInUp = (targetRef)=>{
     // Animtaion settings
     // Group animations together and attach them to a specific element
     const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].context(()=>{
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(element, {
+        const elements = element.getElementsByClassName("content-item");
+        const items = elements.length > 0 ? elements : [
+            element
+        ]; // Check if there are child elements to animate
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(items, {
             y: 50,
             opacity: 0
         });
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].to(element, {
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].to(items, {
             y: 0,
             opacity: 1,
             duration: 2,
+            stagger: 0.5,
             ease: "power3.out"
         });
     }, element);
@@ -143,6 +155,57 @@ const fadeOutUp = (targetRef, onComplete)=>{
         });
     }, element);
     return ()=>ctx.revert();
+};
+const snapScroll = (targetRef)=>{
+    const element = resolveElement(targetRef);
+    if (!element || checkReduceMotion()) return;
+    let sections = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].utils.toArray(".panel");
+    if (sections.length <= 0) return;
+    const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].context(()=>{
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].to(sections, {
+            xPercent: -100 * (sections.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: element,
+                pin: true,
+                scrub: 1,
+                snap: 1 / (sections.length - 1),
+                end: ()=>"+=" + element.offsetWidth * 0.8
+            }
+        });
+    });
+    return ()=>ctx.revert();
+};
+const slideInAlternative = (targetRef, index)=>{
+    const element = resolveElement(targetRef);
+    if (!element || checkReduceMotion()) return;
+    const image = element.querySelector(".card-image");
+    const content = element.querySelector(".card-content");
+    if (!image || !content) return;
+    const imageFromX = index % 2 === 0 ? -120 : 120;
+    const contentFromX = index % 2 === 0 ? 120 : -120;
+    const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].context(()=>{
+        const tl = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].timeline({
+            scrollTrigger: {
+                trigger: element,
+                start: "top -40%",
+                end: "bottom -70%",
+                toggleActions: "play none play reverse"
+            }
+        }).from(image, {
+            x: imageFromX,
+            opacity: 0,
+            ease: "power2.out"
+        }).from(content, {
+            x: contentFromX,
+            opacity: 0,
+            ease: "power2.out"
+        }, 0);
+        return tl;
+    });
+    return ()=>{
+        ctx.revert();
+    };
 };
 }),
 "[project]/src/app/blog/page.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
@@ -179,7 +242,6 @@ function Blog() {
     // GSAP enter animation
     const contentSectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        // fadeInUp(contentSectionRef);
         return (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$gsapAnimation$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fadeInUp"])(contentSectionRef);
     }, []); // Runs once only, after the compoenent mounts
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -196,12 +258,12 @@ function Blog() {
                     className: "w-70 md:w-130"
                 }, void 0, false, {
                     fileName: "[project]/src/app/blog/page.tsx",
-                    lineNumber: 38,
+                    lineNumber: 37,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/blog/page.tsx",
-                lineNumber: 37,
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -210,20 +272,20 @@ function Blog() {
                     "This space will be filled with insights, stories, and projects soon.",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                         fileName: "[project]/src/app/blog/page.tsx",
-                        lineNumber: 42,
+                        lineNumber: 41,
                         columnNumber: 9
                     }, this),
                     "Stay tuned!"
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/blog/page.tsx",
-                lineNumber: 40,
+                lineNumber: 39,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/blog/page.tsx",
-        lineNumber: 32,
+        lineNumber: 31,
         columnNumber: 5
     }, this);
 }

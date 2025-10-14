@@ -24,7 +24,6 @@ export default function Blog() {
   // GSAP enter animation
   const contentSectionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    // fadeInUp(contentSectionRef);
     return fadeInUp(contentSectionRef);
   }, []); // Runs once only, after the compoenent mounts
 

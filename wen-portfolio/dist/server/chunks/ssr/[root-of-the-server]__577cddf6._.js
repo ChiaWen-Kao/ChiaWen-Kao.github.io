@@ -26,7 +26,29 @@ module.exports = mod;
 "[project]/src/components/button.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.s([
+/**
+ * Component: Button
+ *
+ * Renders a button element with optional icons, color variants, and border styles.
+ *
+ * Features:
+ * - Supports multiple visual variants (`filled`, `bordered`, `icon`, `borderedIcon`).
+ * - Accepts two color themes (`cta`, `foreground`).
+ * - Optional built-in icon support (e.g., `"location"`) or custom React nodes.
+ *
+ * @param {Object} TagProps - The props for the Tag component.
+ * @param {"filled" | "bordered" | "icon" | "borderedIcon"} [TagProps.variant="filled"]: Defines the visual style of the tag.
+ * @param {"cta" | "foreground"} [TagProps.colour="cta"]: Sets the tag’s color theme.
+ * @param {"" | "location" | ReactNode} [TagProps.icon=""]: Specifies an icon to display before the text.
+ * @param {ReactNode} TagProps.children: The content displayed inside the tag.
+ * @param {string} [TagProps.className]: Additional Tailwind or custom classes for further styling.
+ * @param {React.HTMLAttributes<HTMLSpanElement>} [props]: Any additional standard `<span>` attributes.
+ *
+ * @returns {JSX.Element} A styled tag element with optional icon and variant-based styling.
+ *
+ * @example
+ * <Tag vaiant="icon" colour="cta" icon="location">Next.js</Tag>
+ */ __turbopack_context__.s([
     "Button",
     ()=>Button
 ]);
@@ -61,50 +83,57 @@ const icons = {
                     d: "M33.40625,0c-0.55078,0.05078 -0.95703,0.54297 -0.90625,1.09375c0.05078,0.55078 0.54297,0.95703 1.09375,0.90625h13l-8,8c0.69922,0.19922 1.20703,0.70703 1.40625,1.40625l8,-8v13c-0.00391,0.35938 0.18359,0.69531 0.49609,0.87891c0.3125,0.17969 0.69531,0.17969 1.00781,0c0.3125,-0.18359 0.5,-0.51953 0.49609,-0.87891v-16.40625h-16.40625c-0.03125,0 -0.0625,0 -0.09375,0c-0.03125,0 -0.0625,0 -0.09375,0zM2,10c-1.10156,0 -2,0.89844 -2,2v36c0,1.10156 0.89844,2 2,2h36c1.10156,0 2,-0.89844 2,-2v-36c0,-0.19922 0.00781,-0.30078 -0.09375,-0.5l-12.8125,12.8125c-0.19922,0.19922 -0.48828,0.28125 -0.6875,0.28125c-0.30078,0 -0.51953,-0.08203 -0.71875,-0.28125c-0.39844,-0.39844 -0.39844,-1.00781 0,-1.40625l12.8125,-12.8125c-0.19922,-0.10156 -0.30078,-0.09375 -0.5,-0.09375z"
                 }, void 0, false, {
                     fileName: "[project]/src/components/button.tsx",
-                    lineNumber: 40,
+                    lineNumber: 63,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/button.tsx",
-                lineNumber: 39,
+                lineNumber: 62,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/src/components/button.tsx",
-            lineNumber: 24,
+            lineNumber: 47,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/button.tsx",
-        lineNumber: 16,
+        lineNumber: 39,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0)),
     download: null
 };
-const colourStyles = {
+const colourFilledStyles = {
     cta: "bg-cta text-background",
     foreground: "bg-foreground text-background",
     disable: "bg-disable text-foreground"
 };
 const Button = ({ variant = "filled", colour = "cta", icon = "", children, className, ...props })=>{
-    const baseStyles = `inline-flex items-center w-auto self-start text-md font-telugu uppercase cursor-pointer gap-3 px-4 py-3`;
+    const baseStyles = `inline-flex items-center self-start w-auto text-md font-telugu uppercase cursor-pointer px-4 py-3`;
     const variantStyles = {
         filled: "",
-        bordered: `border border-${colour} text-${colour} hover:bg-${colour}/10`,
+        bordered: `border border-${colour} hover:bg-${colour}/10 text-${colour}`,
         icon: `text-${colour} hover:bg-${colour}/10 p-2`,
-        borderedIcon: `bg-transparent border-${colour} border-[0.5px] text-cta py-4`
+        borderedIcon: `border-${colour} border-[0.5px] bg-transparent text-cta py-4`
     };
     const renderIcon = typeof icon === "string" && icon in icons ? icons[icon] : icon;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-        className: `${baseStyles} ${variantStyles[variant]} ${colourStyles[colour]} ${className || ""}`,
+        className: `${baseStyles} ${variantStyles[variant]} ${colourFilledStyles[colour]} ${className || ""}`,
         ...props,
         children: [
             children,
-            renderIcon
+            renderIcon && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "ml-3",
+                children: renderIcon
+            }, void 0, false, {
+                fileName: "[project]/src/components/button.tsx",
+                lineNumber: 106,
+                columnNumber: 22
+            }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/button.tsx",
-        lineNumber: 74,
+        lineNumber: 99,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -112,7 +141,27 @@ const Button = ({ variant = "filled", colour = "cta", icon = "", children, class
 "[project]/src/components/navbar.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.s([
+/**
+ * Component: Navbar
+ *
+ * Renders a responsive navigation bar for the portfolio site, supporting both desktop
+ * and mobile layouts. Built with Headless UI Disclosure for the mobile menu.
+ *
+ * Features:
+ * - Responsive layout: desktop horizontal menu and mobile collapsible menu.
+ * - Highlights the current page in the navigation menu with smooth hover underline animations on menu items.
+ *
+ * @returns {JSX.Element} The Navbar component with responsive navigation and interactive elements.
+ *
+ * @example
+ * import Navbar from "@/components/Navbar";
+ *
+ * export default function HomePage() {
+ *   return (
+ *     <Navbar />
+ *   );
+ * }
+ */ __turbopack_context__.s([
     "default",
     ()=>Navbar
 ]);
@@ -122,7 +171,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$XMarkIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__XMarkIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/@heroicons/react/24/outline/esm/XMarkIcon.js [app-ssr] (ecmascript) <export default as XMarkIcon>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
-// Import components
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/button.tsx [app-ssr] (ecmascript)");
 "use client";
 ;
@@ -165,12 +213,12 @@ function Navbar() {
         className: "relative font-telugu z-10",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mx-auto max-w-7xl px-2 py-2 sm:px-6 lg:px-8 sm:py-2 lg:py-6",
+                className: "mx-auto px-4 py-2 md:px-28 md:py-8",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "relative flex h-16 items-center justify-between",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "absolute inset-y-0 left-0 flex items-center sm:hidden",
+                            className: "absolute flex inset-y-0 left-0 items-center sm:hidden",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$headlessui$2f$react$2f$dist$2f$components$2f$disclosure$2f$disclosure$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DisclosureButton"], {
                                 className: "group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500",
                                 children: [
@@ -178,7 +226,7 @@ function Navbar() {
                                         className: "absolute -inset-0.5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/navbar.tsx",
-                                        lineNumber: 37,
+                                        lineNumber: 55,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -186,7 +234,7 @@ function Navbar() {
                                         children: "Open main menu"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/navbar.tsx",
-                                        lineNumber: 38,
+                                        lineNumber: 56,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$Bars3Icon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Bars3Icon$3e$__["Bars3Icon"], {
@@ -194,7 +242,7 @@ function Navbar() {
                                         className: "block size-6 group-data-open:hidden"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/navbar.tsx",
-                                        lineNumber: 39,
+                                        lineNumber: 57,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$XMarkIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__XMarkIcon$3e$__["XMarkIcon"], {
@@ -202,18 +250,18 @@ function Navbar() {
                                         className: "hidden size-6 group-data-open:block"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/navbar.tsx",
-                                        lineNumber: 43,
+                                        lineNumber: 61,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/navbar.tsx",
-                                lineNumber: 36,
+                                lineNumber: 54,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/navbar.tsx",
-                            lineNumber: 34,
+                            lineNumber: 53,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -229,12 +277,12 @@ function Navbar() {
                                         height: 100
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/navbar.tsx",
-                                        lineNumber: 51,
+                                        lineNumber: 69,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/navbar.tsx",
-                                    lineNumber: 50,
+                                    lineNumber: 68,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -250,24 +298,24 @@ function Navbar() {
                                                 children: item.name
                                             }, item.name, false, {
                                                 fileName: "[project]/src/components/navbar.tsx",
-                                                lineNumber: 64,
+                                                lineNumber: 82,
                                                 columnNumber: 21
                                             }, this);
                                         })
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/navbar.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 78,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/navbar.tsx",
-                                    lineNumber: 59,
+                                    lineNumber: 77,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/navbar.tsx",
-                            lineNumber: 49,
+                            lineNumber: 67,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -279,23 +327,23 @@ function Navbar() {
                                 children: "Contact Me"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/navbar.tsx",
-                                lineNumber: 83,
+                                lineNumber: 101,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/navbar.tsx",
-                            lineNumber: 82,
+                            lineNumber: 100,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/navbar.tsx",
-                    lineNumber: 33,
+                    lineNumber: 52,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/navbar.tsx",
-                lineNumber: 32,
+                lineNumber: 51,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$headlessui$2f$react$2f$dist$2f$components$2f$disclosure$2f$disclosure$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DisclosurePanel"], {
@@ -311,34 +359,35 @@ function Navbar() {
                                 children: item.name
                             }, item.name, false, {
                                 fileName: "[project]/src/components/navbar.tsx",
-                                lineNumber: 97,
+                                lineNumber: 114,
                                 columnNumber: 13
                             }, this)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                             variant: "filled",
                             colour: "cta",
                             className: "w-80 mt-2",
+                            onClick: ()=>router.push("/contact"),
                             children: "Contact Me"
                         }, void 0, false, {
                             fileName: "[project]/src/components/navbar.tsx",
-                            lineNumber: 113,
+                            lineNumber: 129,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/navbar.tsx",
-                    lineNumber: 95,
+                    lineNumber: 112,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/navbar.tsx",
-                lineNumber: 94,
+                lineNumber: 111,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/navbar.tsx",
-        lineNumber: 31,
+        lineNumber: 50,
         columnNumber: 5
     }, this);
 }
@@ -346,16 +395,64 @@ function Navbar() {
 "[project]/src/components/footer.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.s([
+/**
+ * Component: Footer
+ *
+ * Renders the website footer section with logo, navigation links, and copyright information.
+ * Designed to be responsive, supporting both mobile and desktop layouts.
+ *
+ * Features:
+ * - Displays the site logo linking to the home page.
+ * - Navigation links to main sections (Home, About, Works, Blog).
+ * - Responsive layout with vertical stacking on mobile and horizontal alignment on desktop.
+ *
+ * @returns {JSX.Element} A responsive footer component with site navigation and branding.
+ *
+ * @example
+ * import Footer from "@/components/Footer";
+ *
+ * export default function HomePage() {
+ *   return (
+ *     <Footer />
+ *   );
+ * }
+ */ __turbopack_context__.s([
     "default",
     ()=>Footer
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 "use client";
 ;
+const navigation = [
+    {
+        name: "Home",
+        href: "/",
+        current: true
+    },
+    {
+        name: "About",
+        href: "/about",
+        current: false
+    },
+    {
+        name: "Works",
+        href: "/works",
+        current: false
+    },
+    {
+        name: "Blog",
+        href: "/blog",
+        current: false
+    },
+    {
+        name: "Contact",
+        href: "/contact",
+        current: false
+    }
+];
 function Footer() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
-        className: "rounded-xl mx-auto max-w-7xl px-6 py-8 md:px-8 md:py-6",
+        className: "mx-auto px-4 md:px-28 py-2 md:py-8",
         id: "footer",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             children: [
@@ -363,136 +460,76 @@ function Footer() {
                     className: "flex flex-col md:flex-row items-center justify-between md:items-center md:justify-between",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                            href: "https://chiawen-kao.github.io/",
-                            className: "flex items-center mb-4 sm:mb-0 rtl:space-x-reverse",
+                            href: "/",
+                            className: "flex items-center mb-4 sm:mb-0",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: "/logo.svg",
                                 className: "w-30",
                                 alt: "Wen's Logo"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/footer.tsx",
-                                lineNumber: 12,
+                                lineNumber: 39,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/footer.tsx",
-                            lineNumber: 8,
+                            lineNumber: 38,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                            className: "flex flex-col md:flex-row items-center text-body text-caption font-telugu gap-8",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            className: "flex flex-col md:flex-row items-center gap-8 text-body text-caption font-telugu",
+                            children: navigation.map((item)=>{
+                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://chiawen-kao.github.io/",
-                                        className: "me-4 md:me-6 uppercase",
-                                        children: "home"
+                                        href: item.href,
+                                        className: "uppercase",
+                                        children: item.name
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/footer.tsx",
-                                        lineNumber: 16,
-                                        columnNumber: 15
+                                        lineNumber: 45,
+                                        columnNumber: 19
                                     }, this)
-                                }, void 0, false, {
+                                }, item.name, false, {
                                     fileName: "[project]/src/components/footer.tsx",
-                                    lineNumber: 15,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://chiawen-kao.github.io/about",
-                                        className: "me-4 md:me-6 uppercase",
-                                        children: "about"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/footer.tsx",
-                                        lineNumber: 24,
-                                        columnNumber: 15
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/footer.tsx",
-                                    lineNumber: 23,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://chiawen-kao.github.io/works",
-                                        className: "me-4 md:me-6 uppercase",
-                                        children: "works"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/footer.tsx",
-                                        lineNumber: 32,
-                                        columnNumber: 15
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/footer.tsx",
-                                    lineNumber: 31,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://chiawen-kao.github.io/blog",
-                                        className: "me-4 md:me-6 uppercase",
-                                        children: "blog"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/footer.tsx",
-                                        lineNumber: 40,
-                                        columnNumber: 15
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/footer.tsx",
-                                    lineNumber: 39,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://chiawen-kao.github.io/contact",
-                                        className: "me-4 md:me-6 uppercase",
-                                        children: "contact"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/footer.tsx",
-                                        lineNumber: 48,
-                                        columnNumber: 15
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/footer.tsx",
-                                    lineNumber: 47,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
+                                    lineNumber: 44,
+                                    columnNumber: 17
+                                }, this);
+                            })
+                        }, void 0, false, {
                             fileName: "[project]/src/components/footer.tsx",
-                            lineNumber: 14,
+                            lineNumber: 41,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/footer.tsx",
-                    lineNumber: 7,
+                    lineNumber: 37,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {
-                    className: "my-6 border-caption border-t-[0.2] sm:mx-auto lg:my-8"
+                    className: "border-gray-400 border-t-[0.2] sm:mx-auto my-6 lg:my-8"
                 }, void 0, false, {
                     fileName: "[project]/src/components/footer.tsx",
-                    lineNumber: 57,
+                    lineNumber: 53,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: "flex text-sm text-gray-400 justify-center font-montserrat",
+                    className: "flex justify-center text-sm text-gray-400 font-montserrat",
                     children: "© 2025 Chia-Wen, Kao · All Rights Reserved."
                 }, void 0, false, {
                     fileName: "[project]/src/components/footer.tsx",
-                    lineNumber: 58,
+                    lineNumber: 54,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/footer.tsx",
-            lineNumber: 6,
+            lineNumber: 36,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/footer.tsx",
-        lineNumber: 5,
+        lineNumber: 35,
         columnNumber: 5
     }, this);
 }

@@ -1,10 +1,33 @@
-import React, { ButtonHTMLAttributes, ReactNode } from "react";
+/**
+ * Component: Button
+ *
+ * Renders a button element with optional icons, color variants, and border styles.
+ *
+ * Features:
+ * - Supports multiple visual variants (`filled`, `bordered`, `icon`, `borderedIcon`).
+ * - Accepts two color themes (`cta`, `foreground`).
+ * - Optional built-in icon support (e.g., `"location"`) or custom React nodes.
+ *
+ * @param {Object} TagProps - The props for the Tag component.
+ * @param {"filled" | "bordered" | "icon" | "borderedIcon"} [TagProps.variant="filled"]: Defines the visual style of the tag.
+ * @param {"cta" | "foreground"} [TagProps.colour="cta"]: Sets the tag’s color theme.
+ * @param {"" | "location" | ReactNode} [TagProps.icon=""]: Specifies an icon to display before the text.
+ * @param {ReactNode} TagProps.children: The content displayed inside the tag.
+ * @param {string} [TagProps.className]: Additional Tailwind or custom classes for further styling.
+ * @param {React.HTMLAttributes<HTMLSpanElement>} [props]: Any additional standard `<span>` attributes.
+ *
+ * @returns {JSX.Element} A styled tag element with optional icon and variant-based styling.
+ *
+ * @example
+ * <Tag vaiant="icon" colour="cta" icon="location">Next.js</Tag>
+ */
+import React, { ReactNode } from "react";
 
 type ButtonVariant = "filled" | "bordered" | "icon" | "borderedIcon";
 type ButtonColour = "cta" | "foreground" | "disable";
 type ButtonIcon = "" | "link" | "download";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   colour?: ButtonColour;
   icon?: ButtonIcon | ReactNode;
@@ -45,7 +68,7 @@ const icons: Record<ButtonIcon, ReactNode> = {
   download: null,
 };
 
-const colourStyles: Record<ButtonColour, string> = {
+const colourFilledStyles: Record<ButtonColour, string> = {
   cta: "bg-cta text-background",
   foreground: "bg-foreground text-background",
   disable: "bg-disable text-foreground",
@@ -59,24 +82,28 @@ export const Button: React.FC<ButtonProps> = ({
   className,
   ...props
 }) => {
-  const baseStyles = `inline-flex items-center w-auto self-start text-md font-telugu uppercase cursor-pointer gap-3 px-4 py-3`;
-
+  const baseStyles = `inline-flex items-center self-start w-auto text-md font-telugu uppercase cursor-pointer px-4 py-3`;
   const variantStyles: Record<ButtonVariant, string> = {
     filled: "",
-    bordered: `border border-${colour} text-${colour} hover:bg-${colour}/10`,
+    bordered: `border border-${colour} hover:bg-${colour}/10 text-${colour}`,
     icon: `text-${colour} hover:bg-${colour}/10 p-2`,
-    borderedIcon: `bg-transparent border-${colour} border-[0.5px] text-cta py-4`,
+    borderedIcon: `border-${colour} border-[0.5px] bg-transparent text-cta py-4`,
   };
 
-  const renderIcon = typeof icon === "string" && icon in icons ? icons[icon as ButtonIcon] : icon;
+  const renderIcon =
+    typeof icon === "string" && icon in icons
+      ? icons[icon as ButtonIcon]
+      : icon;
 
   return (
     <button
-      className={`${baseStyles} ${variantStyles[variant]} ${colourStyles[colour]} ${className || ""}`}
+      className={`${baseStyles} ${variantStyles[variant]} ${
+        colourFilledStyles[colour]
+      } ${className || ""}`}
       {...props}
     >
       {children}
-      {renderIcon}
+      {renderIcon && <span className="ml-3">{renderIcon}</span>}
     </button>
   );
 };

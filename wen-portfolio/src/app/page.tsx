@@ -1,83 +1,55 @@
+/**
+ * Page: Landing Page
+ *
+ * The Landing Page provides users with a quick introduction to who I am,
+ * including links to the "About" and "Works" pages. It serves as an entry
+ * point for exploring my portfolio and key projects.
+ *
+ * Features:
+ * - Displays a set of highlighted project preview cards, each linking to a detailed project page.
+ * - Integrates GSAP animations:
+ *   - Headline animation when the page loads.
+ *   - Project cards slide in from alternating sides as the user scrolls.
+ *
+ * @returns {JSX.Element} The complete landing page layout.
+ */
 "use client";
-import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-// Import components
-import Image from "next/image";
-import Hero from "../components/textHero";
-import { Button } from "../components/button";
-import ProjectPreviewCard from "../components/projectPreview";
+import { useEffect, useRef } from "react";
+import { CenterTextHero } from "components/hero";
+import { Button } from "components/button";
+import { snapScroll } from "utils/gsapAnimation";
+import ImageContentCard from "components/imageContentCard";
+
 import projectData from "../data/projectsOverview";
 
+export default function LandingPage() {
+  const images = [
+    "/imgs/zenzzz.png",
+    "/imgs/chilling-coffee.jpg",
+    "/imgs/tnvr.jpg",
+    "/imgs/sereno.png",
+  ];
 
-gsap.registerPlugin(ScrollTrigger);
-
-export default function Home() {
+  const snapScrollRef = useRef<HTMLDivElement>(null);
+  const projectCardRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const cards = document.querySelectorAll(".project-card");
-    if (!cards.length) return;
-
-    const timelines = Array.from(cards).map((card, i) => {
-      const image = card.querySelector(".card-image");
-      const content = card.querySelector(".card-content");
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: card,
-          start: "start 70%",
-          end: "bottom 50%",
-          toggleActions: "play none play reverse",
-        },
-      });
-
-      const imageFromX = i % 2 === 0 ? -120 : 120;
-      const contentFromX = i % 2 === 0 ? 120 : -120;
-
-      tl.from(
-        image,
-        {
-          x: imageFromX,
-          opacity: 0,
-          duration: 0.9,
-          ease: "power2.out",
-        },
-        0
-      ).from(
-        content,
-        {
-          x: contentFromX,
-          opacity: 0,
-          duration: 0.9,
-          ease: "power2.out",
-        },
-        0.12
-      );
-
-      return tl;
-    });
-
-    ScrollTrigger.refresh();
-
-    return () => {
-      timelines.forEach((t) => t.kill());
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-    };
+    snapScroll(snapScrollRef);
   }, []);
 
   return (
-    <div className="px-4 md:px-2 md:px-30">
-      {/* Hero Section */}
-      <Hero />
-
-      {/* About Me Section */}
-      <section id="about-me" className="px-6 my-20 md:my-40">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="font-telugu text-foreground text-3xl font-bold mb-10">
+    <div>
+      <CenterTextHero />
+      <section className="my-20 md:my-[250px] md:pl-30">
+        <div
+          className="grid grid-cols-1 md:grid-cols-5 overflow-x-hidden"
+          ref={snapScrollRef}
+        >
+          <div className="flex flex-col col-span-2 px-6 py-10 md:px-0 md:pr-20 md:py-0 align-center justify-center">
+            <h2 className="text-foreground font-bold text-3xl font-telugu mb-10">
               Passionate designer with expertise in user-centred design
             </h2>
-            <p className="font-montserrat text-foreground text-md leading-[200%] mb-10">
+            <p className="text-foreground text-md font-montserrat leading-[200%] mb-10">
               I’m a problem solver who loves addressing users’ pain points and
               turning them into meaningful solutions. During the design process,
               I continuously ask “why” and validate decisions through user
@@ -89,91 +61,45 @@ export default function Home() {
               </Button>
             </a>
           </div>
-          <div className="hidden md:columns-3xs md:block">
-            <div className="aspect-3/2 relative overflow-hidden mb-4">
-              <Image
-                src="/imgs/zenzzz.png"
-                alt="ZenZzz UIUX Project"
-                fill
-                loading="eager"
-                className="object-cover"
-              />
-            </div>
-            <div className="aspect-square relative overflow-hidden mb-4">
-              <Image
-                src="/imgs/chilling-coffee.jpg"
-                alt="Chilling Coffee Logo Design Project"
-                fill
-                loading="eager"
-                className="object-cover"
-              />
-            </div>
-            <div className="aspect-square relative overflow-hidden mb-4">
-              <Image
-                src="/imgs/tnvr.jpg"
-                alt="TNVR Logo Design Project"
-                fill
-                loading="eager"
-                className="object-cover"
-              />
-            </div>
-            <div className="aspect-3/2 relative overflow-hidden mb-4">
-              <Image
-                src="/imgs/sereno.png"
-                alt="Sereno Web Design Project"
-                fill
-                loading="eager"
-                className="object-cover"
-              />
+          <div className="col-span-3 relative h-screen overflow-hidden hidden md:block">
+            <div className="flex h-full">
+              {images.map((src, index) => (
+                <img
+                  key={`desktop-${index}`}
+                  src={src}
+                  alt={`Project image ${index + 1}`}
+                  loading="eager"
+                  className="panel w-screen h-full w-full object-cover object-center flex-shrink-0"
+                />
+              ))}
             </div>
           </div>
-          <div className="flex gap-4 overflow-x-auto md:hidden">
-            <div className="aspect-3/2 relative overflow-hidden flex-shrink-0 w-64">
-              <Image
-                src="/imgs/zenzzz.png"
-                alt="ZenZzz UIUX Project"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="aspect-square relative overflow-hidden flex-shrink-0 w-64">
-              <Image
-                src="/imgs/chilling-coffee.jpg"
-                alt="Chilling Coffee Logo Design Project"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="aspect-square relative overflow-hidden flex-shrink-0 w-64">
-              <Image
-                src="/imgs/tnvr.jpg"
-                alt="TNVR Logo Design Project"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="aspect-3/2 relative overflow-hidden flex-shrink-0 w-64">
-              <Image
-                src="/imgs/sereno.png"
-                alt="Sereno Web Design Project"
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="flex overflow-x-auto gap-2 md:hidden">
+            {images.map((src, index) => (
+              <div
+                key={`mobile-${index}`}
+                className="relative aspect-square overflow-hidden flex-shrink-0 w-80"
+              >
+                <img
+                  src={src}
+                  alt={`Project image ${index + 1}`}
+                  loading="eager"
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
-
-      {/* Projects Overview Section */}
-      <section id="projects-overview" className="px-6 md:px-8 my-20 lg:px-30 md:my-40">
-        <h2 className="font-telugu text-foreground text-3xl font-bold mb-10">
+      <section className="my-20 md:my-[150px] px-6 md:px-60">
+        <h2 className=" text-foreground font-bold text-3xl font-telugu mb-10">
           Showcasing Design & Development in Action
           <br />
           “Exploring design through real-world applications.”
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:items-end">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:items-end mb-10">
           <div className="col-span-2">
-            <p className="font-montserrat text-foreground text-md leading-[200%]">
+            <p className="text-foreground text-md font-montserrat leading-[200%]">
               In today’s fast-paced digital world, I continuously learn, adapt,
               and apply new skills across a variety of projects. From UI/UX
               design and full-stack web development to WordPress, graphic
@@ -183,7 +109,7 @@ export default function Home() {
               design.
             </p>
           </div>
-          <div className="flex justify-start smd:justify-end">
+          <div className="flex justify-start md:justify-end">
             <a href="/works">
               <Button variant="borderedIcon" colour="cta" icon="link">
                 see more projects
@@ -191,9 +117,11 @@ export default function Home() {
             </a>
           </div>
         </div>
-        {projectData.map((item, index) => (
-          <ProjectPreviewCard key={index} data={item} index={index} />
-        ))}
+        <div ref={projectCardRef}>
+          {projectData.map((item, index) => (
+            <ImageContentCard key={index} data={item} index={index} />
+          ))}
+        </div>
       </section>
     </div>
   );

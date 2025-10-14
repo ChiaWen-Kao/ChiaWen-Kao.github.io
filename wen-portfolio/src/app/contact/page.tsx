@@ -38,12 +38,12 @@ export default function Contact() {
 
   return (
     <div
-      className="grid grid-cols-1 md:grid-cols-2 gap-20 px-4 md:px-30 opacity-0"
+      className="grid grid-cols-1 md:grid-cols-2 gap-20 px-6 md:px-30 opacity-0"
       ref={contentSectionRef}
     >
       <section
-        className="flex flex-col justify-center"
-        style={{ minHeight: minHeight }}
+        className="flex flex-col justify-center `md:${min-h-[minHeight]}`"
+        style={{ minHeight: window.innerWidth >= 768 ? minHeight : "500px" }}
       >
         <h2 className="font-title">Hello.</h2>
         <p className="font-body mt-10">

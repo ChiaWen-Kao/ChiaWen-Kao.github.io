@@ -1,3 +1,24 @@
+/**
+ * Component: Navbar
+ *
+ * Renders a responsive navigation bar for the portfolio site, supporting both desktop
+ * and mobile layouts. Built with Headless UI Disclosure for the mobile menu.
+ *
+ * Features:
+ * - Responsive layout: desktop horizontal menu and mobile collapsible menu.
+ * - Highlights the current page in the navigation menu with smooth hover underline animations on menu items.
+ *
+ * @returns {JSX.Element} The Navbar component with responsive navigation and interactive elements.
+ *
+ * @example
+ * import Navbar from "@/components/Navbar";
+ *
+ * export default function HomePage() {
+ *   return (
+ *     <Navbar />
+ *   );
+ * }
+ */
 "use client";
 
 import {
@@ -8,8 +29,6 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-
-// Import components
 import { Button } from "../components/button";
 
 const navigation = [
@@ -29,10 +48,9 @@ export default function Navbar() {
 
   return (
     <Disclosure as="nav" id="navbar" className="relative font-telugu z-10">
-      <div className="mx-auto max-w-7xl px-2 py-2 sm:px-6 lg:px-8 sm:py-2 lg:py-6">
+      <div className="mx-auto px-4 py-2 md:px-28 md:py-8">
         <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
+          <div className="absolute flex inset-y-0 left-0 items-center sm:hidden">
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
@@ -90,7 +108,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
       <DisclosurePanel className="sm:hidden text-center">
         <div className="space-y-4 px-2 pt-4 pb-3">
           {navigation.map((item) => (
@@ -109,8 +126,12 @@ export default function Navbar() {
               {item.name}
             </DisclosureButton>
           ))}
-          {/* Mobile Contact Button */}
-          <Button variant="filled" colour="cta" className="w-80 mt-2">
+          <Button
+            variant="filled"
+            colour="cta"
+            className="w-80 mt-2"
+            onClick={() => router.push("/contact")}
+          >
             Contact Me
           </Button>
         </div>
