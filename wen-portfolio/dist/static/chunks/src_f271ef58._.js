@@ -133,13 +133,36 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 "[project]/src/components/tag.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.s([
+/**
+ * Component: Tag
+ *
+ * Renders a tag element with optional icons, color variants, and border styles.
+ *
+ * Features:
+ * - Supports multiple visual variants (`filled`, `bordered`, `icon`, `borderedIcon`).
+ * - Accepts two color themes (`cta`, `foreground`).
+ * - Optional built-in icon support (e.g., `"location"`) or custom React nodes.
+ *
+ * @param {Object} TagProps - The props for the Tag component.
+ * @param {"filled" | "bordered" | "icon" | "borderedIcon"} [TagProps.variant="filled"]: Defines the visual style of the tag.
+ * @param {"cta" | "foreground"} [TagProps.colour="cta"]: Sets the tag’s color theme.
+ * @param {"" | "location" | ReactNode} [TagProps.icon=""]: Specifies an icon to display before the text.
+ * @param {ReactNode} TagProps.children: The content displayed inside the tag.
+ * @param {string} [TagProps.className]: Additional Tailwind or custom classes for further styling.
+ * @param {React.HTMLAttributes<HTMLSpanElement>} [props]: Any additional standard `<span>` attributes.
+ *
+ * @returns {JSX.Element} A styled tag element with optional icon and variant-based styling.
+ *
+ * @example
+ * <Tag vaiant="icon" colour="cta" icon="location">Next.js</Tag>
+ */ __turbopack_context__.s([
     "Tag",
     ()=>Tag
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 ;
 const icons = {
+    // Mapping from the tagIcon keys to a ReactNode
     "": null,
     location: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
         version: "1.0",
@@ -159,7 +182,7 @@ const icons = {
                 strokeWidth: "0"
             }, void 0, false, {
                 fileName: "[project]/src/components/tag.tsx",
-                lineNumber: 29,
+                lineNumber: 55,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -168,7 +191,7 @@ const icons = {
                 strokeLinejoin: "round"
             }, void 0, false, {
                 fileName: "[project]/src/components/tag.tsx",
-                lineNumber: 31,
+                lineNumber: 57,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -180,26 +203,27 @@ const icons = {
                         d: "M32,0C18.746,0,8,10.746,8,24c0,5.219,1.711,10.008,4.555,13.93c0.051,0.094,0.059,0.199,0.117,0.289l16,24 C29.414,63.332,30.664,64,32,64s2.586-0.668,3.328-1.781l16-24c0.059-0.09,0.066-0.195,0.117-0.289C54.289,34.008,56,29.219,56,24 C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z"
                     }, void 0, false, {
                         fileName: "[project]/src/components/tag.tsx",
-                        lineNumber: 39,
+                        lineNumber: 65,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     " "
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/tag.tsx",
-                lineNumber: 37,
+                lineNumber: 63,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/tag.tsx",
-        lineNumber: 16,
+        lineNumber: 42,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0))
 };
 const Tag = (param)=>{
-    let { variant = "filled", colour = "cta", icon = "", children, className, ...props } = param;
-    const baseStyles = "inline-flex items-center w-auto self-start text-xs font-montserrat px-2 py-1 rounded-md";
+    let { // React Function Component
+    variant = "filled", colour = "cta", icon = "", children, className, ...props } = param;
+    const baseStyles = "inline-flex items-center self-start w-auto rounded-md text-xs font-montserrat px-2 py-1";
     const variantStyles = {
         filled: "bg-foreground text-background",
         bordered: "border border-".concat(colour, " text-").concat(colour),
@@ -216,14 +240,14 @@ const Tag = (param)=>{
                 children: renderIcon
             }, void 0, false, {
                 fileName: "[project]/src/components/tag.tsx",
-                lineNumber: 73,
+                lineNumber: 100,
                 columnNumber: 22
             }, ("TURBOPACK compile-time value", void 0)),
             children
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/tag.tsx",
-        lineNumber: 69,
+        lineNumber: 95,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -612,7 +636,7 @@ function About() {
     // Sections data
     const sections = [
         {
-            title: "Something about me",
+            title: "Something About Me",
             content: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {

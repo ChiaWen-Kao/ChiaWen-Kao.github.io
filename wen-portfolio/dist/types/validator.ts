@@ -72,6 +72,12 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   handler satisfies AppPageConfig<"/works/copd">
 }
 
+// Validate ../../src/app/works/global-happiness-data-visualisation/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/works/global-happiness-data-visualisation/page.js")
+  handler satisfies AppPageConfig<"/works/global-happiness-data-visualisation">
+}
+
 // Validate ../../src/app/works/insighthub/page.tsx
 {
   const handler = {} as typeof import("../../src/app/works/insighthub/page.js")

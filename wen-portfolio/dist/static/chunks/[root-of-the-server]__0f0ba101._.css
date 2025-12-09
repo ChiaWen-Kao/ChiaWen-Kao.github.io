@@ -1127,6 +1127,10 @@
     margin-bottom: calc(var(--spacing) * 50);
   }
 
+  .mb-\[30px\] {
+    margin-bottom: 30px;
+  }
+
   .mb-\[40px\] {
     margin-bottom: 40px;
   }
@@ -1242,6 +1246,10 @@
 
   .h-\[500px\] {
     height: 500px;
+  }
+
+  .h-\[600px\] {
+    height: 600px;
   }
 
   .h-\[700px\] {
@@ -2448,13 +2456,6 @@
     .md\:my-\[150px\] {
       margin-top: 150px;
       margin-bottom: 150px;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:my-\[200px\] {
-      margin-top: 200px;
-      margin-bottom: 200px;
     }
   }
 

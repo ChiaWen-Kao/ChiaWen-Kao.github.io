@@ -133,7 +133,7 @@ export default function About() {
   // Sections data
   const sections = [
     {
-      title: "Something about me",
+      title: "Something About Me",
       content: (
         <>
           <p className="font-montserrat text-md leading-[200%]">
