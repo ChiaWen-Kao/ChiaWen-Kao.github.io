@@ -1,114 +1,308 @@
-import WorkHero from "../../../components/workHero";
-import Carousel from "../../../components/carousel";
+"use client";
+
 import Image from "next/image";
+import { Button } from "@components/button";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Sereno() {
-  const slides = [
-    {
-      image: "/imgs/p3/p3-home.jpg",
-      title: "Landing Page",
-      description:
-        "Activities are organised into different categories to help users find what they are looking for more easily. Additionally, testimonials provide users with references on how the activities work. As mentioned in the user description, low visibility of activities is a major factor limiting community engagement. To address this, Sereno features a highlight section that displays activities near the user, making it easier for them to discover and connect with the community.",
-    },
-    {
-      image: "/imgs/p3/p3-product-detail.jpg",
-      title: "Product Page",
-      description:
-        "The product page presents key details about each activity, giving users a clear understanding of what to expect. To foster community connections, a forum is included where users with shared interests can interact and get to know each other.",
-    },
-    {
-      image: "/imgs/p3/p3-blog.jpg",
-      title: "Blog",
-      description:
-        "To convert users into loyal customers, the platform provides blog content with the latest wellness information, enhancing engagement and encouraging repeat visits. Articles are categorized by theme, and related activities are listed within each article, improving promotion effectiveness for clients.",
-    },
-  ];
+  const coverImg = "/imgs/sereno.png";
+  const router = useRouter();
+
   return (
     <>
-      <WorkHero
-        name="Sereno"
-        subtitle="Activity Booking Website   •   2023"
-        coverImg="/imgs/sereno.png"
-      />
-      <section className="px-10 md:px-30">
-        <p className="font-montserrat text-md leading-[200%] mb-[160px]">
-          Sereno is an activity booking website designed to foster community
-          connections by helping users discover local events and activities. The
-          platform recommends activities based on users’ location and personal
-          filters, making it easier to find experiences they’ll enjoy. This
-          project focused on designing an accessible user experience and
-          interface, guided by AI-generated user descriptions and self-conducted
-          insights. In addition, APIs were integrated to deliver dynamic
-          activity data, ensuring the website remains up to date and engaging.
-        </p>
-        <h2 className="font-telugu text-2xl uppercase mb-10">Key Features</h2>
-        <div>
-          <Carousel slides={slides} />
+      <section className="md:mx-60 mdmy-20">
+        <div className="my-30">
+          <h1 className="font-telugu text-5xl md:text-8xl my-8">Sereno</h1>
+          <h3 className="font-montserrat text-xl md:text-2xl">
+            Design for community wellbeing connection
+          </h3>
         </div>
-        <div className="mt-20">
-          <p className="font-montserrat leading-[200%]">
-            The platform is being developed as a web-based application using
-            HTML, CSS, and JavaScript. APIs are invoked to ensure that the
-            content remains up to date. A key focus of this project is adherence
-            to the WCAG (Web Content Accessibility Guidelines), particularly
-            colour contrast, aligning with our user profile that includes
-            individuals with visual impairments. Additionally, a responsive
-            layout has been implemented to ensure the platform is accessible
-            across multiple devices, accommodating users from diverse
-            backgrounds.
-          </p>
-          <h2 className="text-2xl font-bold mb-8 font-telugu mt-50">
-            Design & Development Flow
-          </h2>
-          <ol className="font-montserrat leading-[200%] list-decimal list-outside ml-6">
-            <li>Analysed users’ pain points and needs using AI tools.</li>
-            <li>Identified WCAG guidelines to align with user requirements.</li>
-            <li>
-              Designed low-fidelity and high-fidelity prototypes with a
-              responsive layout.
-            </li>
-            <li>Implemented the frontend.</li>
-            <li>Integrated APIs to ensure up-to-date data.</li>
-            <li>Conducted user testing.</li>
-          </ol>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-40 mt-50 mb-50">
-          <div>
-            <h2 className="text-2xl font-bold mb-8 font-telugu">My Role</h2>
-            <p className="font-montserrat leading-[200%]">
-              I worked on this project individually, focusing mainly on frontend
-              development while also supporting the backend. I used AI tools to
-              conduct user research, designed an accessible UI/UX, implemented
-              the frontend, and integrated APIs.
+        <div className="grid grid-cols-3 gap-6 my-20">
+          <div className="border rounded-lg border-caption p-8">
+            <h3 className="font-montserrat text-l font-semibold mb-4">Role</h3>
+            <p className="font-montserrat">UX/UI Designer</p>
+            <p className="font-montserrat">Web Developer</p>
+          </div>
+          <div className="border rounded-lg border-caption p-8">
+            <h3 className="font-montserrat text-l font-semibold mb-4">
+              Toolkit
+            </h3>
+            <p className="font-montserrat">
+              <b>Design:</b> Figma (Wireframe/Prototype)
+            </p>
+            <p className="font-montserrat">
+              <b>Development:</b> HTML / CSS / JavaScript / Bootstrap
             </p>
           </div>
-          <div className="">
-            <h2 className="text-2xl font-bold mb-8 font-telugu">Skills</h2>
-            <ul className="font-montserrat leading-[200%] list-disc list-inside">
-              <li>Hosting: UQ Cloud</li>
-              <li>Frontend: HTML, CSS (Bootstrap), JavaScript</li>
-              <li>Accessibility: WCAG 2.2, Colour Contrasting Testing</li>
-            </ul>
+          <div className="border rounded-lg border-caption p-8">
+            <h3 className="font-montserrat text-l font-semibold mb-4">
+              Duration
+            </h3>
+            <p className="font-montserrat">2 months</p>
           </div>
         </div>
-        <div className="relative grid grid-cols-2 h-auto mb-20">
-          <div className="relative w-full h-[500px]">
-            <Image
-              src="/imgs/p3/p3-lowfi-home.png"
-              alt="Sereno low fidelity prototype"
-              fill
-              className="object-contain"
-            />
+        <div className="relative w-auto h-[600px] mb-[40px] md:mb-[80px]">
+          <Image
+            src={coverImg}
+            alt="Sereno Cover Image"
+            fill
+            className="object-cover"
+          ></Image>
+        </div>
+      </section>
+      <section className="mx-60 my-20">
+        <h2 className="font-telugu text-3xl font-bold uppercase mb-10">
+          Project Overview
+        </h2>
+        <p className="font-montserrat leading-relaxed mb-10">
+          The fictional client is an in-person wellbeing platform designed to
+          foster community connections by helping people discover local events
+          and activities. The platform recommends activities based on users’
+          location and personal preferences, making it easier to find
+          experiences they’ll enjoy and community groups where they can connect
+          with like-minded individuals. In addition, this website offers a
+          curated selections of wellness-related articles.
+        </p>
+        <div className="flex justify-center">
+          <Button variant="filled" colour="cta" onClick={() => router.push("https://chiawen-kao.github.io/serena-booking-website/")} >
+            Sereno Website Demo
+          </Button>
+        </div>
+      </section>
+      <section className="mx-60 my-20">
+        <h2 className="font-telugu text-3xl font-bold uppercase mb-10">
+          User Needs
+        </h2>
+        <div className="grid grid-cols-3 gap-6">
+          <div className="border rounded-lg border-caption p-8">
+            <h3 className="font-montserrat text-l font-semibold mb-4">
+              Information Accessibility
+            </h3>
+            <p className="font-montserrat leading-relaxed">
+              Bridging the gap in the current market by making affordable and
+              free local activities easily discoverable through a centralised
+              platform.
+            </p>
           </div>
-          <div className="relative h-auto">
-            <Image
-              src="/imgs/p3/p3-lowfi-blog.png"
-              alt="Sereno low fidelity prototype"
-              fill
-              className="object-contain"
-            />
+          <div className="border rounded-lg border-caption p-8">
+            <h3 className="font-montserrat text-l font-semibold mb-4">
+              Community Engagement
+            </h3>
+            <p className="font-montserrat leading-relaxed">
+              Creating a space for meaningful interaction to combat social
+              isolation, encouraging users to actively participate and connect
+              with their local community.
+            </p>
+          </div>
+          <div className="border rounded-lg border-caption p-8">
+            <h3 className="font-montserrat text-l font-semibold mb-4">
+              Holistic Wellness
+            </h3>
+            <p className="font-montserrat leading-relaxed">
+              Empowering users to prioritise mental health and work-life balance
+              in a fast-paced world by providing access to diverse wellness
+              activities.
+            </p>
           </div>
         </div>
+      </section>
+      <section className="mx-60 my-20">
+        <h2 className="font-telugu text-3xl font-bold uppercase mb-10">
+          User Story
+        </h2>
+        <div className="flex gap-16 items-center mb-12">
+          <div className="relative w-[150px] aspect-square rounded-full overflow-hidden flex-shrink-0">
+            <Image
+              src="/imgs/p3/alice.png"
+              alt="Sereno Cover Image"
+              fill
+              className="object-cover object-top"
+            />
+          </div>
+          <div>
+            <p className="font-montserrat text-lg font-bold mb-4">Alice</p>
+            <p className="font-montserrat leading-relaxed">
+              As an educator who is paying attention to holistic growth, I want
+              to engage in different kinds of affordable social activities so
+              that I can not only keep my lifestyle better but also be involved
+              in communities.
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-16 items-center mb-8">
+          <div className="relative w-[150px] aspect-square rounded-full overflow-hidden flex-shrink-0">
+            <Image
+              src="/imgs/p3/jackson.png"
+              alt="Sereno Cover Image"
+              fill
+              className="object-cover object-top"
+            />
+          </div>
+          <div>
+            <p className="font-montserrat text-lg font-bold mb-4">Jackson</p>
+            <p className="font-montserrat leading-relaxed">
+              As a graphic designer cares about social issues and advocate
+              around theme of sustainability, mental health, and community
+              engagement, I want to easily access wellness activities that is
+              align with my budget and values and connect with more mind-likely
+              individuals.
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-16 items-center mb-8">
+          <div className="relative w-[150px] aspect-square rounded-full overflow-hidden flex-shrink-0">
+            <Image
+              src="/imgs/p3/maya.png"
+              alt="Sereno Cover Image"
+              fill
+              className="object-cover object-top"
+            />
+          </div>
+          <div>
+            <p className="font-montserrat text-lg font-bold mb-4">Maya</p>
+            <p className="font-montserrat leading-relaxed">
+              As an empathetic social worker dedicates to helping others in need
+              and fostering interaction with individuals, I want to connect with
+              like-minded individuals who share the same values of wellness and
+              are committed to make a positive impact on society.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-60 my-20">
+        <h2 className="font-telugu text-3xl font-bold uppercase mb-10">
+          Key Feature
+        </h2>
+        <div className="relative overflow-x-auto rounded-md border-caption border-[0.5px]">
+          <table className="w-full font-montserrat text-left text-body">
+            <thead className="text-center bg-caption border-b rounded-lg border-caption">
+              <tr className="text-primary">
+                <th className="px-6 py-6">Feature</th>
+                <th className="px-6 py-6">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-caption border-b-[0.25px]">
+                <td className="px-6 py-6 border-caption border-r-[0.25px]">
+                  Advanced Search Bar & Filters
+                </td>
+                <td className="px-6 py-6">
+                  Features an intuitive search bar with filters for date,
+                  location, and price to help users quickly discover activities
+                  that fit their preference.
+                </td>
+              </tr>
+              <tr className="border-caption border-b-[0.25px]">
+                <td className="px-6 py-6 border-caption border-r-[0.25px]">
+                  Theme Categories
+                </td>
+                <td className="px-6 py-6">
+                  Organises workshops and events into themes like “Mindfulness”
+                  or “Handcraft,” allowing for effortless exploration based on
+                  user passions.
+                </td>
+              </tr>
+              <tr className="border-caption border-b-[0.25px]">
+                <td className="px-6 py-6 border-caption border-r-[0.25px]">
+                  Today’s Nearby Activities Map
+                </td>
+                <td className="px-6 py-6">
+                  Integrate a real-time map interface to visualise local events,
+                  fostering a stronger sense of community and immediate.
+                </td>
+              </tr>
+              <tr className="border-caption border-b-[0.25px]">
+                <td className="px-6 py-6 border-caption border-r-[0.25px]">
+                  Connect with Others / Group Chat
+                </td>
+                <td className="px-6 py-6">
+                  Includes community chat groups for each activity, enabling
+                  users to build social connections and reduce social anxiety
+                  before attending.
+                </td>
+              </tr>
+              <tr className="border-caption border-b-[0.25px]">
+                <td className="px-6 py-6 border-caption border-r-[0.25px]">
+                  Wellness Blog & News Letter
+                </td>
+                <td className="px-6 py-6">
+                  A dedicate space for wellbeing articles and professional tips,
+                  providing value beyond event booking and building brand
+                  authority.
+                </td>
+              </tr>
+              <tr className="border-caption border-b-[0.25px]">
+                <td className="px-6 py-6 border-caption border-r-[0.25px]">
+                  Event Calendar Selector
+                </td>
+                <td className="px-6 py-6">
+                  Integrate a calendar feature into the activity details page,
+                  allowing users to intuitively view available dates and
+                  complete bookings directly, thereby simplifying the overall
+                  user flow.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section className="mx-60 my-20">
+        <h2 className="font-telugu text-3xl font-bold uppercase mb-10">
+          Frontend Development
+        </h2>
+        <h3 className="font-montserrat text-lg font-bold mb-4">
+          Responsive Design
+        </h3>
+        <p className="font-montserrat mb-12">
+          Built with a mobile-first approach, the website utilises a responsive
+          grid system to ensure full compatibility across mobile, tablet, and
+          desktop versions. Every component is optimised to align with user
+          behaviour and interaction patterns on different devices.
+        </p>
+        <h3 className="font-montserrat text-lg font-bold mb-4">
+          Accessibility
+        </h3>
+        <p className="font-montserrat mb-12">
+          This project follows <b>WCAG 2.1 guidelines</b> to create an inclusive
+          experience for all users. We implemented{" "}
+          <b>AAA-level colour contrast</b> for optimal clarity, conducted{" "}
+          <b>colour-blindness safety checks</b> to ensure information remains
+          accessible, and integrated <b>descriptive alt-text</b> to support
+          screen reader tools.
+        </p>
+        <h3 className="font-montserrat text-lg font-bold mb-4">
+          API Integration
+        </h3>
+        <p className="font-montserrat mb-12">
+          Event data, including images, schedules, and categories, is managed
+          through a centralised database, with a API enabling seamless
+          <b>retrieval, creation, and modification (CRUD operations)</b>. This
+          architecture ensures dynamic content delivery and keeps the website
+          up-to-date in real-time.
+        </p>
+      </section>
+      <section className="mx-60 my-20">
+        <div className="relative w-[80%] h-200 mb-[40px] md:mb-[80px] justify-center mx-auto">
+          <Image
+            src="/imgs/p3/p3-lowfi-home.png"
+            alt="Sereno Cover Image"
+            fill
+          ></Image>
+        </div>
+      </section>
+      <section className="mx-60 my-20">
+        <h2 className="font-telugu text-3xl font-bold uppercase mb-10">
+          Outcomes
+        </h2>
+        <p className="font-montserrat leading-relaxed mb-10">
+          This project encompasses the full design lifecycle, from <b>user testing
+          and UX/UI design to frontend development and API integration</b>. The
+          result is a comprehensive wellness platform that prioritises
+          inclusivity by strictly adhering to <b>WCAG 2.1 guidelines</b> and
+          implementing a <b>responsive layout</b>. These combined approaches have
+          successfully created a user-friendly, intuitive interface that
+          significantly <b>simplifies the event discovery and booking process</b>.
+        </p>
       </section>
     </>
   );

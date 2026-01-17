@@ -1067,6 +1067,10 @@
     margin-top: calc(var(--spacing) * 5);
   }
 
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
