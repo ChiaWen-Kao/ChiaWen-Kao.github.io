@@ -99,7 +99,7 @@ export default function ContactForm({ onSuccess, onFail }: ContactFormProps) {
         <Button
           variant="filled"
           colour={isSubmitting ? "disable" : "cta"}
-          type="submit"
+          // type="submit"
           className={isSubmitting ? "cursor-progress" : "cursor-pointer"}
         >
           {isSubmitting ? "Submitting..." : "Send Message"}

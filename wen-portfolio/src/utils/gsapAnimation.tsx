@@ -179,7 +179,7 @@ export const snapScroll = (
   const element = resolveElement(targetRef);
   if (!element || checkReduceMotion()) return;
 
-  let sections = gsap.utils.toArray<HTMLElement>(".panel");
+  const sections = gsap.utils.toArray<HTMLElement>(".panel");
   if (sections.length <= 0) return;
 
   const ctx = gsap.context(() => {

@@ -35,7 +35,7 @@ export default function Footer() {
     <footer className="mx-auto px-4 md:px-28 py-2 md:py-8" id="footer">
       <div>
         <div className="flex flex-col md:flex-row items-center justify-between md:items-center md:justify-between">
-          <a href="/" className="flex items-center mb-4 sm:mb-0">
+          <a href="https://chiawen-kao.github.io/" className="flex items-center mb-4 sm:mb-0">
             <img src="/logo.svg" className="w-30" alt="Wen's Logo" />
           </a>
           <ul className="flex flex-col md:flex-row items-center gap-8 text-body text-caption font-telugu">

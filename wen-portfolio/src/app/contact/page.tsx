@@ -43,7 +43,7 @@ export default function Contact() {
     >
       <section
         className="flex flex-col justify-center `md:${min-h-[minHeight]}`"
-        style={{ minHeight: window.innerWidth >= 768 ? minHeight : "500px" }}
+        // style={{ minHeight: window.innerWidth >= 768 ? minHeight : "500px" }}
       >
         <h2 className="font-title">Hello.</h2>
         <p className="font-body mt-10">
